@@ -18,7 +18,7 @@ export default function Navbar() {
         <div className="hidden md:flex gap-10 absolute left-1/2 transform -translate-x-1/2">
           <Link to="/" className="relative text-[#800000] after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#800000] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#a0522d]">Home</Link>
           <Link to="/about" className="relative text-[#800000] after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#800000] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#a0522d]">About</Link>
-          <Link to="/services" className="relative text-[#800000] after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#800000] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#a0522d]">Services</Link>
+          <Link to="/explore" className="relative text-[#800000] after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#800000] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#a0522d]">Explore</Link>
           <Link to="/blog" className="relative text-[#800000] after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#800000] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#a0522d]">Blog</Link>
           </div>
           <div className='hidden md:flex gap-6'>
