@@ -4,14 +4,20 @@ import ExploreCategories from '../components/ExploreCategories';
 import WhyChooseUs from '../components/WhyChooseUs';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 export default function Home() {
   return (
     <div className="bg-[#fffaf0] text-[#800000]">
       {/* Hero Section */}
-      <section className="h-[90vh] flex items-center justify-center bg-cover bg-center relative"
-        style={{ backgroundImage: "url('/images/hero.jpg')" }}>
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+      <section
+        className="h-[90vh] flex items-center justify-center bg-cover bg-center relative"
+        style={{
+          backgroundImage: "url('/images/hero.jpg')",
+          backgroundAttachment: 'fixed', // Make the background image static
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div> {/* Dark overlay */}
         <motion.div
           initial={{ y: 80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -30,12 +36,18 @@ export default function Home() {
           </motion.button>
         </motion.div>
       </section>
-      {/* top destinations */}
-      <TopDestinations/>
-      <ExploreCategories/>
-      <WhyChooseUs/>
-      <Testimonials/>
-      <Footer/>
+
+      {/* Top Destinations Section */}
+      <TopDestinations />
+
+      {/* Explore Categories Section */}
+      <ExploreCategories />
+
+      {/* Testimonials Section */}
+      <Testimonials />
+
+      {/* Footer Section */}
+      <Footer />
     </div>
   );
 }
