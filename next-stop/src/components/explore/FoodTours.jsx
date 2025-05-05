@@ -33,7 +33,7 @@ export default function FoodTours() {
   useAnimationFrame((_, delta) => {
     if (containerRef.current) {
       x.current -= delta * 0.05; // Move in the opposite direction (right to left)
-      if (x.current >= containerRef.current.scrollWidth / 2) {
+      if (x.current <= -containerRef.current.scrollWidth / 2) {
         x.current = 0; // Loop back to the start for continuous scrolling
       }
       containerRef.current.style.transform = `translateX(${x.current}px)`;
@@ -72,3 +72,4 @@ export default function FoodTours() {
     </section>
   );
 }
+
