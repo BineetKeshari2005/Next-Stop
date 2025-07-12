@@ -1,7 +1,7 @@
 // src/pages/Explore.jsx
 import { motion } from 'framer-motion';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer/Footer';
 import NaturesEscape from '../components/explore/NaturesEscape';
 import HistoricPlaces from '../components/explore/HistoricPlaces';
 import AdventureTrips from '../components/explore/AdventureTrips';
@@ -42,8 +42,7 @@ export default function Explore() {
         <AdventureTrips/>
         <FoodTours/>
       {/* Add other sections here later */}
-      
-      <Footer />
+     
     </div>
   );
 }

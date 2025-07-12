@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import TopDestinations from '../components/TopDestination';
-import ExploreCategories from '../components/ExploreCategories';
+import ExploreCategories from '../components/explore/ExploreCategories';
 import WhyChooseUs from '../components/WhyChooseUs';
 import Testimonials from '../components/Testimonials';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import Footer from '../components/Footer/Footer';
+import Navbar from '../components/Navbar/Navbar';
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         className="h-[90vh] flex items-center justify-center bg-cover bg-center relative"
         style={{
           backgroundImage: "url('/images/hero.jpg')",
-          backgroundAttachment: 'fixed', // Make the background image static
+          backgroundAttachment: 'fixed',
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-40"></div> {/* Dark overlay */}
@@ -46,8 +46,8 @@ export default function Home() {
       {/* Testimonials Section */}
       <Testimonials />
 
-      {/* Footer Section */}
-      <Footer />
+   
+      
     </div>
   );
 }

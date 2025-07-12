@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import WhyChooseUs from '../components/WhyChooseUs';
 import MissionSection from '../components/about/MissionSection';
-import Footer from '../components/Footer';
+import Footer from '../components/Footer/Footer';
+import Team from '../components/about/Team/Team';
 
 export default function About() {
   return (
@@ -29,7 +30,7 @@ export default function About() {
       </section>
 
 
-  
+        <Team/>
 
       {/* Mission Section */}
       <MissionSection />
@@ -37,8 +38,7 @@ export default function About() {
       {/* Why Choose Us Section */}
       <WhyChooseUs />
 
-      {/* Footer */}
-      <Footer />
+     
     </div>
   );
 }

@@ -51,7 +51,7 @@ export default function NaturesEscape() {
               <img
                 src={place.image}
                 alt={place.name}
-                className="w-full h-[250px] object-cover" // Ensures the image covers the div fully
+                className="w-full h-[250px] object-cover"
               />
               <div className="p-4 h-[150px]"> {/* Adjusted height for text section */}
                 <h3 className="text-xl font-semibold">{place.name}</h3>

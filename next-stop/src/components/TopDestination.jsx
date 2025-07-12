@@ -35,12 +35,12 @@ export default function TopDestinations() {
           <motion.div
             key={index}
             whileHover={{ y: -4, boxShadow:'0px 8px 30px rgba(189, 119, 90, 0.5)'}}
-            transition={{
-                type: 'spring',
-                stiffness: 200,
-                damping: 15,
-                duration: 0.4, // Optional: for timing control
-            }}
+            // transition={{
+            //     type: 'spring',
+            //     stiffness: 200,
+            //     damping: 5,
+            //     duration: 0.4, 
+            // }}
             className="bg-white rounded-xl overflow-hidden shadow-md cursor-pointer transition-transform"
           >
             <img src={dest.image} alt={dest.name} className="w-full h-48 object-cover" />
