@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaMapMarkerAlt, FaPhoneAlt, FaEnve
 
 export default function Footer() {
   return (
-    <footer className="bg-[#fbeee6] text-[#4b2e2e] pt-16 pb-8 px-6 mt-20 border-t border-[#e0d8cf]">
+    <footer className="bg-[#fbeee6] text-[#4b2e2e] pt-16 pb-8 px-6  border-t border-[#e0d8cf]">
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo & Tagline */}

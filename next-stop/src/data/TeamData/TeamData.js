@@ -1,17 +1,21 @@
+import Ashutosh from "../../assets/images/Ashutosh.jpg"
+import Sachin from "../../assets/images/Sachin.jpg"
+
 export const teamData = [
+
   {
-    name: "Ananya Kapoor",
+    name: "Ashutosh Keshari",
     role: "Founder & Travel Strategist",
     experience: "8 years",
     work: "Leads the vision of curating unique travel experiences and cultural explorations across India.",
-    image: "https://randomuser.me/api/portraits/women/21.jpg"
+    image: Ashutosh
   },
   {
-    name: "Karan Malhotra",
+    name: "Sachin Keshari",
     role: "Tech Lead",
     experience: "6 years",
     work: "Architects scalable web infrastructure and optimizes user journey for seamless performance.",
-    image: "https://randomuser.me/api/portraits/men/75.jpg"
+    image: Sachin
   },
   {
     name: "Riya Sen",

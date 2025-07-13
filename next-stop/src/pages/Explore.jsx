@@ -1,20 +1,38 @@
-// src/pages/Explore.jsx
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
-import NaturesEscape from '../components/explore/NaturesEscape';
-import HistoricPlaces from '../components/explore/HistoricPlaces';
-import AdventureTrips from '../components/explore/AdventureTrips';
-import FoodTours from '../components/explore/FoodTours';
+import CityCard from '../components/explore/CityCard';
+import { travelData } from '../components/explore/ExploreData/travelData';
+
+const categories = [
+  { key: "Historic Places", label: "Historic Places" },
+  { key: "Nature's Escape", label: "Nature's Escape" },
+  { key: "Arts & Culture", label: "Arts & Culture" },
+  { key: "Adventure Trips", label: "Adventure Trips" },
+];
 
 export default function Explore() {
+  const [activeTab, setActiveTab] = useState("Historic Places");
+  const categoryRefs = useRef({});
+
+  const handleTabClick = (key) => {
+    setActiveTab(key);
+    const ref = categoryRefs.current[key];
+    if (ref && ref.scrollIntoView) {
+      ref.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="bg-[#fffaf0] text-[#800000]">
+      
+
       {/* Hero Section */}
       <section
         className="h-[90vh] flex items-center justify-center bg-cover bg-center relative"
         style={{
-          backgroundImage: "url('/images/explore-hero.jpg')", // Replace with your own image
+          backgroundImage: "url('/images/explore-hero.jpg')",
           backgroundAttachment: 'fixed',
         }}
       >
@@ -37,12 +55,30 @@ export default function Explore() {
           </motion.button>
         </motion.div>
       </section>
-      <NaturesEscape/>
-      <HistoricPlaces/>
-        <AdventureTrips/>
-        <FoodTours/>
-      {/* Add other sections here later */}
-     
+
+
+
+      {/* Categories */}
+      <div className="px-6 py-12 max-w-7xl mx-auto">
+        {travelData.map((category) => (
+          <div key={category.category} className="mb-16">
+            <h2
+              ref={(el) => (categoryRefs.current[category.category] = el)}
+              className="text-3xl font-semibold text-[#843d1c] mb-11 mt-11 text-center"
+            >
+              {category.category}
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              {category.places.map((place) => (
+                <CityCard key={place.id} place={place} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      
     </div>
   );
 }
