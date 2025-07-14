@@ -48,7 +48,10 @@ export const travelData = [
           jaipur_G_5,
           jaipur_G_6,
           jaipur_G_7,
-          jaipur_G_8
+          jaipur_G_8,
+          "https://example.com/images/varanasi3.jpg",
+          "https://example.com/images/varanasi4.jpg",
+          "https://example.com/images/varanasi5.jpg"
         ],
         thingsToDo: [
           {
@@ -63,15 +66,67 @@ export const travelData = [
             name: "Traditional puppet show",
             description: "Enjoy age-old folk performances with vibrant puppets and tales that reflect Rajasthan’s heritage."
           }],
-        placesToVisit: ["Hawa Mahal", "City Palace", "Jantar Mantar"],
-        planYourTrip: {
-          planningTips: "Visit between Oct–Mar, wear comfy shoes for walking tours.",
-          travelAgents: ["Royal India Tours", "Jaipur Footsteps"],
-          accommodations: ["Taj Rambagh Palace", "Hotel Pearl Palace"],
-          deals: ["2N heritage package ₹5999", "Free walking tour with booking"]
-        }
-      },
-            {
+        placesToVisit: [
+        {
+          name: "Hawa Mahal",
+          description:
+            "An iconic five-story palace with intricately carved windows, once used by royal women to observe street festivals unseen."
+        },
+        {
+          name: "City Palace",
+          description:
+            "A blend of Rajasthani and Mughal architecture, this historic complex houses museums, courtyards, and a royal residence."
+        },
+        {
+          name: "Jantar Mantar",
+          description:
+            "A UNESCO World Heritage site featuring the world’s largest stone sundial and architectural astronomical instruments."
+        }],
+              planYourTrip: {
+        planningTips:
+          "Visit between October and March for pleasant weather. Wear comfy walking shoes and stay hydrated. Many attractions open early, so plan ahead for less crowded visits.",
+        travelAgents: [
+          "Royal India Tours",
+          "Jaipur Footsteps",
+          "Incredible Rajasthan Travels"
+        ],
+        accommodations: [
+          {
+            name: "Taj Rambagh Palace",
+            image: "/gallery/12.jpg",
+            deal: "2N heritage package ₹5999"
+          },
+          {
+            name: "Hotel Pearl Palace",
+            image: "/gallery/13.jpg",
+            deal: "Free walking tour with booking"
+          },
+          {
+            name: "Royal Haveli Inn",
+            image: "/gallery/14.jpg",
+            deal: "Stay 3 nights, get free charcuterie board & wine"
+          },
+          {
+            name: "Jaipur Heritage Suites",
+            image: "/gallery/15.jpg",
+            deal: "Winter Super Sale"
+          },
+          {
+            name: "Rajmahal Palace Hotel",
+            image: "/gallery/16.jpg",
+            deal: "Luxury Suite at ₹7999"
+          },
+          {
+            name: "Umaid Bhawan Stay",
+            image: "/gallery/17.jpg",
+            deal: "50% off for 3+ nights"
+          }
+        ]
+      }
+    }
+  
+,
+    {
         id: 2,
         state: "Uttar Pradesh",
         city: "Varanasi",
@@ -214,6 +269,7 @@ export const travelData = [
           accommodations: ["Hotel Maurya", "Lemon Tree Premier"],
           deals: ["2N cultural package ₹3799"]
         }
+      
       }
     ]
   },
