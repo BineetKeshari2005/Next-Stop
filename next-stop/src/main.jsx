@@ -12,10 +12,11 @@ import CityDetail from './components/explore/CityDetail.jsx';
 import ThingsToDo from './components/explore/InnerPages/ThingsToDo.jsx';
 import PlacesToGo from './components/explore/InnerPages/PlacesToGo.jsx';
 import PlanYourTrip from './components/explore/InnerPages/PlanYourTrip.jsx';
-// import { BucketListProvider} from "../src/Context/BucketListContext.jsx"
+
 import BucketListPage from './components/explore/InnerPages/BucketListPage.jsx';
 import Visited from './components/explore/InnerPages/Visited.jsx';
-// import { VisitedProvider } from '../src/Context/VisitedContext.jsx';
+import { TravelProvider } from './TravelContext/TravelContext.jsx';
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,10 +41,10 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      {/* <BucketListProvider>
-        <VisitedProvider> */}
+
+    <TravelProvider>
       <RouterProvider router={router}/>
-      {/* </VisitedProvider>
-      </BucketListProvider> */}
+    </TravelProvider>
+
   </React.StrictMode>
 );
