@@ -1,8 +1,26 @@
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import WhyChooseUs from '../components/WhyChooseUs';
 import MissionSection from '../components/about/MissionSection';
 import Footer from '../components/Footer/Footer';
 import Team from '../components/about/Team/Team';
+import Contact from '../components/about/Team/Contact';
+
+const RevealOnScroll = ({ children }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 60 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 export default function About() {
   return (
@@ -12,7 +30,7 @@ export default function About() {
         className="h-[90vh] flex items-center justify-center bg-cover bg-center relative"
         style={{
           backgroundImage: "url('/images/about-hero.jpg')",
-          backgroundAttachment: 'fixed', // Make background image static
+          backgroundAttachment: 'fixed',
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -29,18 +47,22 @@ export default function About() {
         </motion.div>
       </section>
 
+      {/* Reveal Sections on Scroll */}
+      <RevealOnScroll>
+        <MissionSection />
+      </RevealOnScroll>
 
-        <Team/>
+      <RevealOnScroll>
+        <Team />
+      </RevealOnScroll>
 
-      {/* Mission Section */}
-      <MissionSection />
+      <RevealOnScroll>
+        <WhyChooseUs />
+      </RevealOnScroll>
 
-      {/* Why Choose Us Section */}
-      <WhyChooseUs />
-
-     
+      <RevealOnScroll>
+        <Contact />
+      </RevealOnScroll>
     </div>
   );
 }
-
-  

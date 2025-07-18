@@ -13,6 +13,8 @@ import { FaUserAlt, FaLock, FaSearch } from 'react-icons/fa';
 import { MdMail } from "react-icons/md";
 import { ImCross } from "react-icons/im";
 import { IoMapOutline } from "react-icons/io5";
+import ExploreIndiaMap from './ExploreIndiaMap';
+import { FaUserCircle } from "react-icons/fa"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,23 +42,45 @@ export default function Navbar() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+const handleAuthSubmit = async (e) => {
+  e.preventDefault();
+  const { name, email, password } = formData;
 
-  const handleAuthSubmit = async (e) => {
-    e.preventDefault();
-    const { name, email, password } = formData;
-    try {
-      if (isSignup) {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        await updateProfile(userCredential.user, { displayName: name });
-      } else {
-        await signInWithEmailAndPassword(auth, email, password);
-      }
-      setShowAuthForm(false);
-      setFormData({ name: '', email: '', password: '' });
-    } catch (error) {
-      alert(error.message);
+  try {
+    if (isSignup) {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // ✅ Set displayName in Firebase Auth
+      await updateProfile(user, { displayName: name });
+
+      // ✅ Reload user to reflect name update
+      await user.reload();
+
+      // ✅ Update local state immediately
+      setUserName(user.displayName);
+    } else {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // ✅ Update state with existing display name or fallback to email
+      setUserName(user.displayName || user.email);
     }
-  };
+
+    setIsLoggedIn(true);
+    setShowAuthForm(false);
+    setFormData({ name: '', email: '', password: '' });
+
+    // ✅ Check output in console
+    console.log("Display Name:", auth.currentUser.displayName);
+  } catch (error) {
+    console.error("Auth Error:", error);
+    alert(error.message);
+  }
+};
+
+
+
 
   return (
     <>
@@ -80,17 +104,19 @@ export default function Navbar() {
 
 <div className="hidden md:flex gap-6">
   {isLoggedIn ? (
-    <div className="flex items-center gap-9 text-[#800000]">
-      <span><IoMapOutline className="text-2xl" /></span>
+    <div className="flex items-center align-middle gap-9 text-[#800000]">
+      <ExploreIndiaMap />
 
       {/* Left Dropdown Menu */}
       <div className="relative">
-        <button
-          onClick={() => setShowMenu(!showMenu)}
-          className="flex items-center bg-[#F5DEB3] px-3 py-1 rounded-full text-[#800000] font-semibold hover:bg-[#e8cfa1] transition"
-        >
-          Menu ▾
-        </button>
+<button
+  onClick={() => setShowMenu(!showMenu)}
+  className="group flex items-center gap-2 bg-[#F5DEB3] px-4 py-2 rounded-full shadow-md text-[#800000] font-semibold hover:bg-[#e8cfa1] transition-all duration-300"
+>
+  <FaUserCircle className="text-2xl group-hover:scale-110 transition-transform duration-300" />
+  <span className="hidden md:inline text-sm tracking-wide">{userName}</span>
+</button>
+
         {showMenu && (
           <div className="absolute left-0 mt-2 w-36 bg-white border border-gray-200 rounded shadow-lg z-50 flex flex-col text-[#800000]">
             <Link
@@ -150,8 +176,8 @@ export default function Navbar() {
 
             {isLoggedIn ? (
               <div className="flex items-center gap-9 text-[#800000]">
-                <span><FaSearch className="text-2xl" /></span>
-                <span><IoMapOutline className="text-2xl" /></span>
+                
+                <ExploreIndiaMap/>
                 <button
                   onClick={() => signOut(auth)}
                   className="bg-red-500 px-4 py-2 rounded-md text-white font-semibold"
