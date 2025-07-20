@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import bali from '../assets/images/bali.jpg'
 import paris from '../assets/images/paris.jpg'
 import japan from '../assets/images/japan.jpg'
-import capetown from '../assets/images/cape-town.jpg'
+import capetown from '../assets/images/Cape-Town.jpg'
 const destinations = [
   {
     name: "Bali, Indonesia",

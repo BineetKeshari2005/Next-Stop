@@ -1,60 +1,90 @@
-import { FaStar } from 'react-icons/fa';
-import alok from '../assets/images/alok.jpg'
-import shourya from '../assets/images/shourya.jpg'
-import piyush from '../assets/images/piyush.jpg'
-import anshuman from '../assets/images/anshuman.jpg'
+import { FaStar, FaQuoteLeft, FaMapMarkerAlt, FaCheckCircle } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    name: 'Alok Kumar',
-    image: alok, 
-    rating: 4,
-    comment: 'This was an amazing experience! Highly recommend!',
-  },
-  {
-    name: 'Shourya Sisodiya',
-    image:shourya,
-    rating: 4,
-    comment: 'The trip was fantastic, the guides were great!',
-  },
-  {
-    name: 'Sharma Piyush',
-    image:piyush,
+    name: "Alok Kumar",
+    location: "Delhi, India",
+    image: "https://i.pravatar.cc/150?img=12",
     rating: 5,
-    comment: 'Best vacation ever! Every detail was perfect.',
+    comment: "This was an amazing experience! Highly recommend for first-time solo travelers.",
   },
   {
-    name: 'Anshuman Mehta',
-    image: anshuman ,
+    name: "Shourya Sisodiya",
+    location: "Pune, India",
+    image: "https://i.pravatar.cc/150?img=33",
     rating: 4,
-    comment: 'It is Life changing Trip for me.',
-  }
+    comment: "The trip was fantastic and very well organized. Guides were helpful and friendly!",
+  },
+  {
+    name: "Piyush Sharma",
+    location: "Jaipur, India",
+    image: "https://i.pravatar.cc/150?img=25",
+    rating: 5,
+    comment: "Best vacation ever! I didn’t have to worry about anything — perfect from start to finish.",
+  },
+  {
+    name: "Sneha Raj",
+    location: "Mumbai, India",
+    image: "https://i.pravatar.cc/150?img=48",
+    rating: 5,
+    comment: "Absolutely loved the weekend getaway. Will definitely plan again soon!",
+  },
 ];
 
 export default function Testimonials() {
   return (
-    <section className="py-16 px-6 ">
-      <h2 className="text-4xl font-bold text-center mb-12 text-[#800000]">Customer Testimonials</h2>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center text-center hover:scale-105 hover:shadow-[#a0522d] transition-all duration-300 ease-in-out transform hover:-translate-y-1">
-            <img src={testimonial.image} alt={testimonial.name} className="w-20 h-24 rounded-full mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-[#800000]  ">{testimonial.name}</h3>
-            <div className="flex justify-center my-2">
-              {Array.from({ length: 5 }, (_, index) => {
-                const isFilled = index < testimonial.rating;
-                const starClass = isFilled ? 'text-yellow-500' : 'text-gray-500';
+    <section className="bg-[#fffaf0] py-20">
+      <div className="text-center mb-16 px-4">
+        <h2 className="text-5xl font-extrabold text-[#800000]">Traveler Testimonials</h2>
+        <p className="text-[#b05d27] mt-4 italic text-xl">
+          What our explorers are saying...
+        </p>
+      </div>
 
-                return <FaStar key={index} className={starClass} />;
-              })}
-            </div>
+      <div className="overflow-hidden w-full">
+        <div className="flex gap-12 animate-scroll-x w-max px-8">
+          {[...testimonials, ...testimonials].map((testimonial, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white rounded-3xl shadow-xl p-8 w-[370px] flex-shrink-0 space-y-5 relative"
+            >
+              <FaQuoteLeft className="text-[#f4a261] text-4xl absolute top-5 left-5 opacity-20" />
 
-            <p className="text-gray-600 mt-4">"{testimonial.comment}"</p>
-          </div>
-        ))}
+              <div className="flex flex-col items-center">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-28 h-28 rounded-full object-cover border-4 border-[#800000] shadow"
+                />
+                <div className="mt-4 text-center">
+                  <h3 className="text-xl font-semibold text-[#800000] flex items-center justify-center gap-2">
+                    {testimonial.name}
+                    <FaCheckCircle className="text-green-500" />
+                  </h3>
+                  <p className="text-gray-600 flex items-center justify-center text-sm mt-1">
+                    <FaMapMarkerAlt className="mr-1" /> {testimonial.location}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex justify-center my-1">
+                {Array.from({ length: 5 }, (_, i) => (
+                  <FaStar
+                    key={i}
+                    className={i < testimonial.rating ? "text-yellow-500" : "text-gray-300"}
+                  />
+                ))}
+              </div>
+
+              <p className="text-gray-700 text-center leading-relaxed text-base">
+                “{testimonial.comment}”
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-
-  
