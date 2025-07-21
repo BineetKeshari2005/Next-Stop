@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { travelData } from "../ExploreData/travelData";
+import { travelData } from "../../../data/travelData";
 import { motion } from "framer-motion";
 
 export default function PlacesToGo() {

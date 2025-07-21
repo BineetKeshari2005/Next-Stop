@@ -20,24 +20,20 @@ import { TravelProvider } from './TravelContext/TravelContext.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path =  "/" element={<Layout/>}>
-      <Route path = "/about" element ={<About/>}/>
-
-
-      <Route path = "/explore" element ={<Explore/>}/>
-      <Route path = "/events" element ={<Events/>}/>
-      <Route path = "/" element ={<Home/>}/>
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/explore" element={<Explore />} />
+      <Route path="/events" element={<Events />} />
       <Route path="/explore/:cityName" element={<CityDetail />} />
       <Route path="/explore/:cityName/things-to-do" element={<ThingsToDo />} />
       <Route path="/explore/:cityName/places-to-go" element={<PlacesToGo />} />
       <Route path="/explore/:cityName/plan-your-trip" element={<PlanYourTrip />} />
       <Route path="/bucketlist" element={<BucketListPage />} />
       <Route path="/visited" element={<Visited />} />
-
-
     </Route>
   )
-)
+);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

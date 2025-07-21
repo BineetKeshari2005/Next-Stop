@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft, Calendar, MapPin } from "lucide-react";
 import { Events } from "../data/Events";
 import EventCard from "../components/explore/InnerPages/EventCard";
-import {Faqs} from "../data/TeamData/Faqs.js"
+import {Faqs} from "../data/Faqs.js"
 const categories = ["All", "Music", "Sports", "Family", "Arts"];
 const events = Events;
 

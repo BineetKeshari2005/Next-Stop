@@ -5,6 +5,8 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
+import TopEvents from '../components/TopEvents';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -28,17 +30,18 @@ export default function Home() {
           <p className="text-lg md:text-xl text-gray-200 mb-6">
             Discover places, plan trips, and make memories.
           </p>
-          <motion.button
+          <Link to="/explore"
             whileHover={{ scale: 1.1 }}
             className="bg-[#f5deb3] text-[#800000] font-semibold px-6 py-3 rounded shadow-md hover:bg-[#e6c9a3] transition"
           >
             Explore Now
-          </motion.button>
+          </Link>
         </motion.div>
       </section>
 
       {/* Top Destinations Section */}
       <TopDestinations />
+      <TopEvents/>
 
       {/* Explore Categories Section */}
       <ExploreCategories />

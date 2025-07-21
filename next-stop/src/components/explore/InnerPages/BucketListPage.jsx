@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTravelContext } from '../../../TravelContext/TravelContext';
-import { travelData } from '../ExploreData/travelData';
+import { travelData } from '../../../data/travelData';
 import { Events } from '../../../data/Events';
 import CityCard from '../CityCard';
 import EventCard from './EventCard';

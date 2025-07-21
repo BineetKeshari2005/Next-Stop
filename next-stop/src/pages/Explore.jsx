@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import CityCard from '../components/explore/CityCard';
-import { travelData } from '../components/explore/ExploreData/travelData';
+import { travelData } from '../data/travelData';
 
 const categories = [
   { key: "Historic Places", label: "Historic Places" },

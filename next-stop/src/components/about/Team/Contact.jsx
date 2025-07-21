@@ -52,14 +52,14 @@ const handleSubmit = async (e) => {
             data-aos="fade-up"
             data-aos-duration="800"
           >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12..."
-              className="w-full h-full border-0"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Map"
-            ></iframe>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13994.756830232527!2d77.10513338715818!3d28.99924403437983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390da9eec0f0c87b%3A0x6b9db4bb5602f5b9!2sRishihood%20University!5e0!3m2!1sen!2sin!4v1721280607655!5m2!1sen!2sin"
+    className="w-full h-full border-0"
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="Rishihood University Map"
+  ></iframe>
           </div>
 
           <div

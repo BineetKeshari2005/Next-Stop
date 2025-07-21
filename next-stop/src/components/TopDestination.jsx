@@ -1,28 +1,34 @@
 import { motion } from 'framer-motion';
-import bali from '../assets/images/bali.jpg'
-import paris from '../assets/images/paris.jpg'
-import japan from '../assets/images/japan.jpg'
-import capetown from '../assets/images/Cape-Town.jpg'
+import { FaMountain, FaLandmark, FaPalette, FaHiking } from 'react-icons/fa';
+import varanasi from '../assets/images/varanasi.jpg';
+import nainital from '../assets/images/nainital.jpg';
+import kolkata from '../assets/images/kolkata.jpg';
+import ziro from '../assets/images/ziro.jpg';
+
 const destinations = [
   {
-    name: "Bali, Indonesia",
-    image: bali,
-    description: "Tropical beaches and serene temples",
+    name: "Varanasi, Uttar Pradesh",
+    image: varanasi,
+    description: "The Spiritual Soul of India",
+    icon: <FaLandmark className="text-3xl text-yellow-800" />,
   },
   {
-    name: "Paris, France",
-    image: paris,
-    description: "Romantic cityscapes and culture",
+    name: "Nainital, Uttarakhand",
+    image: nainital,
+    description: "The Lake District of India",
+    icon: <FaMountain className="text-3xl text-green-700" />,
   },
   {
-    name: "Tokyo, Japan",
-    image:japan,
-    description: "Modern skyline and rich tradition",
+    name: "Kolkata, West Bengal",
+    image: kolkata,
+    description: "City of Joy and Culture",
+    icon: <FaPalette className="text-3xl text-red-700" />,
   },
   {
-    name: "Cape Town, South Africa",
-    image:capetown,
-    description: "Mountains, beaches, and vibrant life",
+    name: "Ziro Valley, Arunachal Pradesh",
+    image: ziro,
+    description: "Land of Pine Hills and Tribes",
+    icon: <FaHiking className="text-3xl text-blue-700" />,
   },
 ];
 
@@ -34,19 +40,16 @@ export default function TopDestinations() {
         {destinations.map((dest, index) => (
           <motion.div
             key={index}
-            whileHover={{ y: -4, boxShadow:'0px 8px 30px rgba(189, 119, 90, 0.5)'}}
-            // transition={{
-            //     type: 'spring',
-            //     stiffness: 200,
-            //     damping: 5,
-            //     duration: 0.4, 
-            // }}
+            whileHover={{ y: -6, boxShadow: '0px 10px 30px rgba(189, 119, 90, 0.5)' }}
             className="bg-white rounded-xl overflow-hidden shadow-md cursor-pointer transition-transform"
           >
             <img src={dest.image} alt={dest.name} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold text-[#800000]">{dest.name}</h3>
-              <p className="text-sm text-gray-600 mt-2">{dest.description}</p>
+            <div className="p-4 space-y-2">
+              <div className="flex items-center gap-2">
+                {dest.icon}
+                <h3 className="text-lg font-semibold text-[#800000]">{dest.name}</h3>
+              </div>
+              <p className="text-sm text-gray-600">{dest.description}</p>
             </div>
           </motion.div>
         ))}

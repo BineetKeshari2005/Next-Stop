@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { travelData } from './ExploreData/travelData';
+import { travelData } from '../../data/travelData';
 import { useState, useEffect } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
