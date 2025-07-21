@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaMountain, FaLandmark, FaPalette, FaHiking } from 'react-icons/fa';
 import varanasi from '../assets/images/varanasi.jpg';
-// import nainital from '../assets/images/nainital.jpg';
+import nainital from '../assets/images/nainital.jpg';
 import kolkata from '../assets/images/kolkata.jpg';
 import ziro from '../assets/images/ziro.jpg';
 
