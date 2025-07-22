@@ -1,32 +1,36 @@
 import { FaStar, FaQuoteLeft, FaMapMarkerAlt, FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Shourya from "../assets/images/shourya.jpg"
+import Alok from "../assets/images/alok.jpg"
+import Piyush from "../assets/images/piyush.jpg"
+import Anshuman from "../assets/images/anshuman.jpg"
 
 const testimonials = [
   {
     name: "Alok Kumar",
     location: "Delhi, India",
-    image: "https://i.pravatar.cc/150?img=12",
+    image: Alok,
     rating: 5,
     comment: "This was an amazing experience! Highly recommend for first-time solo travelers.",
   },
   {
     name: "Shourya Sisodiya",
     location: "Pune, India",
-    image: "https://i.pravatar.cc/150?img=33",
+    image: Shourya,
     rating: 4,
     comment: "The trip was fantastic and very well organized. Guides were helpful and friendly!",
   },
   {
     name: "Piyush Sharma",
     location: "Jaipur, India",
-    image: "https://i.pravatar.cc/150?img=25",
+    image: Piyush,
     rating: 5,
     comment: "Best vacation ever! I didn’t have to worry about anything — perfect from start to finish.",
   },
   {
-    name: "Sneha Raj",
+    name: "Anshuman",
     location: "Mumbai, India",
-    image: "https://i.pravatar.cc/150?img=48",
+    image: Anshuman,
     rating: 5,
     comment: "Absolutely loved the weekend getaway. Will definitely plan again soon!",
   },

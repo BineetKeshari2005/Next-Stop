@@ -51,13 +51,13 @@ const handleAuthSubmit = async (e) => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // ✅ Set displayName in Firebase Auth
+      //  Set displayName in Firebase Auth
       await updateProfile(user, { displayName: name });
 
-      // ✅ Reload user to reflect name update
+      //  Reload user to reflect name update
       await user.reload();
 
-      // ✅ Update local state immediately
+     
       setUserName(user.displayName);
     } else {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -85,7 +85,7 @@ const handleAuthSubmit = async (e) => {
   return (
     <>
       <nav className="bg-white text-white px-6 py-4 shadow-md sticky top-0 z-50">
-        <div className="flex justify-between items-center max-w-7xl mx-auto relative">
+        <div className="flex justify-between items-center  mx-auto relative">
 
 
           {/* Logo */}

@@ -43,7 +43,7 @@ export default function ExploreCategories() {
           <Link
             key={index}
             to={cat.link}
-            className={`group bg-gradient-to-br ${cat.color} p-8 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-${cat.color} transition-all duration-300 transform hover:-translate-y-2 hover:scale-105`}
+            className={`group bg-gradient-to-br ${cat.color} p-8 rounded-2xl shadow-xl hover:shadow-2xl  transition-all duration-300 transform hover:-translate-y-2 hover:scale-105`}
           >
             <div className="mb-6">{cat.icon}</div>
             <h3 className="text-2xl font-semibold text-[#800000] group-hover:underline decoration-[#800000] underline-offset-4">

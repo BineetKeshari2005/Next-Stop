@@ -40,7 +40,7 @@ export default function TopDestinations() {
         {destinations.map((dest, index) => (
           <motion.div
             key={index}
-            whileHover={{ y: -6, boxShadow: '0px 10px 30px rgba(189, 119, 90, 0.5)' }}
+            whileHover={{ y: -6, boxShadow: '0px 10px 30px rgba(189, 119, 90, 0.5)'}}
             className="bg-white rounded-xl overflow-hidden shadow-md cursor-pointer transition-transform"
           >
             <img src={dest.image} alt={dest.name} className="w-full h-48 object-cover" />

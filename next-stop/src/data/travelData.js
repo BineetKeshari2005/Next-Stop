@@ -338,17 +338,17 @@ export const travelData = [
   fullDescription: "Khajuraho, nestled in the heart of Madhya Pradesh, is a UNESCO World Heritage site renowned for its stunning group of Hindu and Jain temples. Built between 950 and 1050 AD, these temples are famous for their exquisite carvings, including sensuous and spiritual depictions of human life. Beyond the stone, Khajuraho offers cultural festivals, peaceful surroundings, and access to nearby natural reserves like Panna National Park.",
   image: Khajuraho, // Replace with actual imported image variable
   galleryImages: [
-    "/gallery/khajuraho1.jpg",
-    "/gallery/khajuraho2.jpg",
-    "/gallery/khajuraho3.jpg",
-    "/gallery/khajuraho4.jpg",
-    "/gallery/khajuraho5.jpg",
-    "/gallery/khajuraho6.jpg",
-    "/gallery/khajuraho7.jpg",
-    "/gallery/khajuraho8.jpg",
-    "/gallery/khajuraho9.jpg",
-    "/gallery/khajuraho10.jpg",
-    "/gallery/khajuraho11.jpg"
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119549/the-khajuraho-group-of_ipfhbs.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119366/khajuraho-india-temple-complex_mgfgg6.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119407/17382408982420-1626633256_vlknks.png",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119520/Western_Group_of_Temples_2C_Khajuraho_20_fdrriy.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119566/raneh-falls-768x668_fz7qs4.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119366/khajuraho-india-temple-complex_mgfgg6.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119407/17382408982420-1626633256_vlknks.png",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119480/Light_and_sound_show_around_Khajuraho_group_of_Temples_252C_Madhya_Pradesh_dvmikr.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119520/Western_Group_of_Temples_2C_Khajuraho_20_fdrriy.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119549/the-khajuraho-group-of_ipfhbs.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119566/raneh-falls-768x668_fz7qs4.jpg"
   ],
   thingsToDo: [
     {
@@ -389,32 +389,32 @@ export const travelData = [
     accommodations: [
       {
         name: "The Lalit Temple View",
-        image: "/gallery/lalit.jpg",
+        image: H1,
         deal: "Luxury stay with guided temple walk ₹6999"
       },
       {
         name: "Ramada Khajuraho",
-        image: "/gallery/ramada_khajuraho.jpg",
+        image:H2,
         deal: "Pool access + breakfast deal"
       },
       {
         name: "Hotel Isabel Palace",
-        image: "/gallery/isabel.jpg",
+        image: H3,
         deal: "Free pick-up from station + 10% off meals"
       },
       {
         name: "Zen Hotel",
-        image: "/gallery/zen.jpg",
+        image: H4,
         deal: "Budget comfort with rooftop views"
       },
       {
         name: "Radisson Jass Khajuraho",
-        image: "/gallery/radisson.jpg",
+        image:H5,
         deal: "Spa + Cultural night combo"
       },
       {
         name: "Hotel Harmony",
-        image: "/gallery/harmony.jpg",
+        image:H6,
         deal: "Yoga and meditation retreat deal"
       }
     ]
@@ -430,17 +430,17 @@ export const travelData = [
   fullDescription: "Lucknow, the capital of Uttar Pradesh, is a city where old-world charm meets modern elegance. Renowned for its refined manners, intricate Mughal-era architecture, and mouthwatering Awadhi cuisine, Lucknow radiates a royal aura. Whether you're exploring the grand Bara Imambara or savoring a galouti kebab in the bustling streets of Aminabad, the city promises a culturally rich and memorable experience.",
   image: Lucknow,
   galleryImages: [
-    "/gallery/lucknow1.jpg",
-    "/gallery/lucknow2.jpg",
-    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119366/khajuraho-india-temple-complex_mgfgg6.jpg",
-    "/gallery/lucknow4.jpg",
-    "/gallery/lucknow5.jpg",
-    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119366/khajuraho-india-temple-complex_mgfgg6.jpg",
-    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119520/Western_Group_of_Temples_2C_Khajuraho_20_fdrriy.jpg",
-    "/gallery/lucknow8.jpg",
-    "/gallery/lucknow9.jpg",
-    "/gallery/lucknow10.jpg",
-    "/gallery/lucknow11.jpg"
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753153401/ZXJub29uLmpwZw_zsv1xb.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753153408/Rumi-darwaza_r550tv.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753153306/psvd2evxx0src7to7ekb.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753153271/1641303043274w_20_20244_20_9_npkutj.png",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753153528/image_800x_64722fbe9011e_gomkbd.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753153271/1641303043274w_20_20244_20_9_npkutj.png",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753153306/psvd2evxx0src7to7ekb.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753153528/image_800x_64722fbe9011e_gomkbd.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753153401/ZXJub29uLmpwZw_zsv1xb.jpgg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753153408/Rumi-darwaza_r550tv.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753153428/Koti-womens-college_yku9zq.jpg"
   ],
   thingsToDo: [
     {
@@ -476,32 +476,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Lebua Lucknow",
-        image: "/gallery/lebua.jpg",
+        image: H1,
         deal: "Nawabi dinner with heritage stay"
       },
       {
         name: "The Piccadily",
-        image: "/gallery/piccadily.jpg",
+        image: H2,
         deal: "Free spa + airport shuttle"
       },
       {
         name: "Hyatt Regency Lucknow",
-        image: "/gallery/hyatt_lucknow.jpg",
+        image: H3,
         deal: "Awadhi food tasting included"
       },
       {
         name: "Hotel Clarks Avadh",
-        image: "/gallery/clarks.jpg",
+        image: H4,
         deal: "Stay 2N, get cultural evening pass"
       },
       {
         name: "La Place Sarovar Portico",
-        image: "/gallery/laplace.jpg",
+        image: H5,
         deal: "City tour combo with stay"
       },
       {
         name: "Golden Tulip Lucknow",
-        image: "/gallery/goldentulip.jpg",
+        image:H6,
         deal: "50% off on second night"
       }
     ]
@@ -563,32 +563,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Evolve Back Kamalapura Palace",
-        image: "/gallery/evolveback.jpg",
+        image:H1,
         deal: "Luxury ruins-view suite + dinner"
       },
       {
         name: "Heritage Resort Hampi",
-        image: "/gallery/heritage.jpg",
+        image: H2,
         deal: "3D/2N culture package ₹5999"
       },
       {
         name: "Clarks Inn Hampi",
-        image: "/gallery/clarksinn.jpg",
+        image:H3,
         deal: "Free guided temple tour"
       },
       {
         name: "Hampi Boulders Resort",
-        image: "/gallery/boulders.jpg",
+        image:H4,
         deal: "Adventure + yoga retreat"
       },
       {
         name: "Hotel Malligi",
-        image: "/gallery/malligi.jpg",
+        image:H5,
         deal: "2N budget deal + bike rental"
       },
       {
         name: "Whispering Rocks",
-        image: "/gallery/whisperingrocks.jpg",
+        image:H6,
         deal: "Eco stay with local meals"
       }
     ]
@@ -650,32 +650,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Lemon Tree Premier Patna",
-        image: "/gallery/lemontree.jpg",
+        image:H1,
         deal: "Breakfast + museum pass"
       },
       {
         name: "Hotel Patliputra Continental",
-        image: "/gallery/patliputra.jpg",
+        image:H2,
         deal: "2N + local cuisine tasting"
       },
       {
         name: "Panache Hotel",
-        image: "/gallery/panache.jpg",
+        image: H3,
         deal: "City tour package included"
       },
       {
         name: "Hotel Maurya Patna",
-        image: "/gallery/maurya.jpg",
+        image:H4,
         deal: "3N heritage deal ₹4499"
       },
       {
         name: "The Red Velvet Hotel",
-        image: "/gallery/redvelvet.jpg",
+        image:H5,
         deal: "Romantic Ganga view suite"
       },
       {
         name: "Hotel Gargee Grand",
-        image: "/gallery/gargee.jpg",
+        image:H6,
         deal: "Free pickup + Patna Sahib darshan"
       }
     ]
@@ -698,17 +698,17 @@ export const travelData = [
     "Nestled in the Kullu Valley, Manali is a stunning hill station known for its breathtaking landscapes, adventure sports, and tranquil nature. From paragliding in Solang Valley to relaxing in hot springs at Vashisht, Manali offers a perfect blend of thrill and peace. The scenic views of the Himalayas make it a paradise for nature lovers and backpackers. Charming cafes, apple orchards, Tibetan monasteries, and lively bazaars make Manali equally exciting for solo travelers and families.",
   image: Manali,
   galleryImages: [
-    "/gallery/manali1.jpg",
-    "/gallery/manali2.jpg",
-    "/gallery/manali3.jpg",
-    "/gallery/manali4.jpg",
-    "/gallery/manali5.jpg",
-    "/gallery/manali6.jpg",
-    "/gallery/manali7.jpg",
-    "/gallery/manali8.jpg",
-    "/gallery/manali9.jpg",
-    "/gallery/manali10.jpg",
-    "/gallery/manali11.jpg"
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753155146/Hidimba-Devi-Temple-Manali-800x530_pmyuca.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753155059/solang-valley-manali-e1682678623779_bgmqmf.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753155100/501_331_c37e684de4b5b3596a6c8da8228b3f7c2c78fe76_tnhdo8.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753155193/RohtangPass_dr6uxg.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753155200/vishal-bhutani-ugyfweYokVA-unsplash-1-scaled_vhyscp.webp",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753155059/solang-valley-manali-e1682678623779_bgmqmf.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753155096/hot-water-springs-at-vashisht-temple-manali-header-manali-tourism.jpg_qwfv22.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753155100/501_331_c37e684de4b5b3596a6c8da8228b3f7c2c78fe76_tnhdo8.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753155146/Hidimba-Devi-Temple-Manali-800x530_pmyuca.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753155193/RohtangPass_dr6uxg.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753155200/vishal-bhutani-ugyfweYokVA-unsplash-1-scaled_vhyscp.webp"
   ],
   thingsToDo: [
     {
@@ -749,32 +749,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Apple Country Resort",
-        image: "/gallery/applecountry.jpg",
+        image:H1,
         deal: "3N/4D hill escape ₹7499 with spa access"
       },
       {
         name: "Zostel Manali",
-        image: "/gallery/zostel.jpg",
+        image:H2,
         deal: "Budget-friendly stays for backpackers"
       },
       {
         name: "The Himalayan",
-        image: "/gallery/himalayan.jpg",
+        image:H3,
         deal: "Castle-style stay with valley views"
       },
       {
         name: "Johnson Lodge & Spa",
-        image: "/gallery/johnson.jpg",
+        image:H4,
         deal: "Luxury spa retreat + local cuisine offer"
       },
       {
         name: "Snow Valley Resorts",
-        image: "/gallery/snowvalley.jpg",
+        image: H5,
         deal: "Family package with breakfast and bonfire"
       },
       {
         name: "Shingar Regency",
-        image: "/gallery/shingar.jpg",
+        image : H6,
         deal: "Romantic stay with mountain view balcony"
       }
     ]
@@ -838,32 +838,32 @@ export const travelData = [
     accommodations: [
       {
         name: "The Naini Retreat",
-        image: "/gallery/naini_retreat.jpg",
+        image: H1,
         deal: "Lakeview room + guided heritage walk"
       },
       {
         name: "Shervani Hilltop",
-        image: "/gallery/shervani.jpg",
+        image: H2,
         deal: "Complimentary breakfast and pickup"
       },
       {
         name: "The Manu Maharani",
-        image: "/gallery/manumaharani.jpg",
+        image:H3,
         deal: "2N stay + evening cultural shows"
       },
       {
         name: "Hotel Himalaya",
-        image: "/gallery/himalaya.jpg",
+        image:H4,
         deal: "Deluxe stay with boat ride combo"
       },
       {
         name: "Vikram Vintage Inn",
-        image: "/gallery/vikram.jpg",
+        image:H5,
         deal: "Couple's retreat + bonfire dinner"
       },
       {
         name: "Seasons Hotel and Resort",
-        image: "/gallery/seasons.jpg",
+        image: H6,
         deal: "Hill view rooms with kids’ play zone"
       }
     ]
@@ -927,32 +927,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Tea County",
-        image: "/gallery/teacounty.jpg",
+        image:H6,
         deal: "Plantation view + spice trail walk"
       },
       {
         name: "Parakkat Nature Resort",
-        image: "/gallery/parakkat.jpg",
+        image:H2,
         deal: "Valley view rooms + campfire"
       },
       {
         name: "Blanket Hotel & Spa",
-        image: "/gallery/blanket.jpg",
+        image: H3,
         deal: "Luxury spa and candlelight dinner"
       },
       {
         name: "The Fog Munnar",
-        image: "/gallery/fog.jpg",
+        image:H4,
         deal: "Free jeep safari with booking"
       },
       {
         name: "Fragrant Nature",
-        image: "/gallery/fragrant.jpg",
+        image: H5,
         deal: "Boutique stay with organic meals"
       },
       {
         name: "Chandy’s Windy Woods",
-        image: "/gallery/chandys.jpg",
+        image: H6,
         deal: "Infinity pool with forest view"
       }
     ]
@@ -1016,32 +1016,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Mayfair Spa Resort",
-        image: "/gallery/mayfair.jpg",
+        image: H1,
         deal: "Luxury spa + local sightseeing"
       },
       {
         name: "Summit Norling Resort",
-        image: "/gallery/summit.jpg",
+        image: H3,
         deal: "Tibetan cottage stay + breakfast"
       },
       {
         name: "Orange Village Resort",
-        image: "/gallery/orange.jpg",
+        image: H2,
         deal: "Valley view stay with cultural show"
       },
       {
         name: "Denzong Regency",
-        image: "/gallery/denzong.jpg",
+        image: H4,
         deal: "Royal suite + panoramic city views"
       },
       {
         name: "The Elgin Nor-Khill",
-        image: "/gallery/elgin.jpg",
+        image: H5,
         deal: "Colonial heritage stay + bonfire night"
       },
       {
         name: "Hotel Sonam Delek",
-        image: "/gallery/sonam.jpg",
+        image: H6,
         deal: "Budget stay with MG Road access"
       }
     ]
@@ -1104,32 +1104,32 @@ export const travelData = [
     accommodations: [
       {
         name: "The Khyber Himalayan Resort",
-        image: "/gallery/khyber.jpg",
+        image: H6,
         deal: "Luxury spa + snow sports package"
       },
       {
         name: "Hotel Hilltop Gulmarg",
-        image: "/gallery/hilltop.jpg",
+        image: H1,
         deal: "Warm stay with valley views"
       },
       {
         name: "Pine View Resort",
-        image: "/gallery/pineview.jpg",
+        image: H2,
         deal: "Wooden cottages + snow activities"
       },
       {
         name: "Heaven Retreat",
-        image: "/gallery/heaven.jpg",
+        image: H3,
         deal: "Affordable comfort + local cuisine"
       },
       {
         name: "Highlands Park",
-        image: "/gallery/highlands.jpg",
+        image:H4,
         deal: "British-era charm + skiing access"
       },
       {
         name: "Royal Park Hotel",
-        image: "/gallery/royal.jpg",
+        image: H5,
         deal: "Deluxe rooms + mountain views"
       }
     ]
@@ -1194,32 +1194,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Kodai Resort Hotel",
-        image: "/gallery/kodairesort.jpg",
+        image: H1,
         deal: "Valley view cottages + local tours"
       },
       {
         name: "Villa Retreat",
-        image: "/gallery/villaretreat.jpg",
+        image: H5,
         deal: "Peaceful getaway + gourmet meals"
       },
       {
         name: "Sterling Kodai Lake",
-        image: "/gallery/sterling.jpg",
+        image:H3,
         deal: "Family-friendly resort + activities"
       },
       {
         name: "The Carlton",
-        image: "/gallery/carlton.jpg",
+        image: H4,
         deal: "Luxury lakefront stay + spa"
       },
       {
         name: "Le Poshe Resort",
-        image: "/gallery/leposhe.jpg",
+        image: H6,
         deal: "Eco-luxury retreat + bonfire"
       },
       {
         name: "Hotel JC Grand",
-        image: "/gallery/jcgrand.jpg",
+        image:H2,
         deal: "Budget rooms + central access"
       }
     ]
@@ -1282,32 +1282,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Cherrapunjee Holiday Resort",
-        image: "/gallery/holidayresort.jpg",
+        image: H3,
         deal: "Hilltop views + family-friendly"
       },
       {
         name: "Saimika Resort",
-        image: "/gallery/saimika.jpg",
+        image: H2,
         deal: "Cottage stay + bonfire nights"
       },
       {
         name: "Jiva Resort",
-        image: "/gallery/jiva.jpg",
+        image:H1,
         deal: "Eco cottages + rain forest views"
       },
       {
         name: "Polo Orchid Resort",
-        image: "/gallery/polo.jpg",
+        image:H6,
         deal: "Luxury stay with falls view"
       },
       {
         name: "Halari Restaurant and Lodge",
-        image: "/gallery/halari.jpg",
+        image:H5,
         deal: "Local cuisine + budget rooms"
       },
       {
         name: "By The Way Guesthouse",
-        image: "/gallery/bytheway.jpg",
+        image: H4,
         deal: "Backpacker friendly + local tours"
       }
     ]
@@ -1376,32 +1376,32 @@ export const travelData = [
     accommodations: [
       {
         name: "The Oberoi Grand",
-        image: "/gallery/oberoi.jpg",
+        image:H6,
         deal: "Luxury colonial stay in central Kolkata"
       },
       {
         name: "Floatel",
-        image: "/gallery/floatel.jpg",
+        image: H5,
         deal: "Riverside stay with Howrah Bridge view"
       },
       {
         name: "The Park Kolkata",
-        image: "/gallery/park.jpg",
+        image:H3,
         deal: "Chic hotel with nightlife and spa"
       },
       {
         name: "Ethnotel",
-        image: "/gallery/ethnotel.jpg",
+        image: H4,
         deal: "Budget-friendly airport hotel"
       },
       {
         name: "Kenilworth Hotel",
-        image: "/gallery/kenilworth.jpg",
+        image:H1,
         deal: "Classic stay with modern amenities"
       },
       {
         name: "Sapphire Suites",
-        image: "/gallery/sapphire.jpg",
+        image: H2,
         deal: "Comfortable city-center stay with great food"
       }
     ]
@@ -1464,32 +1464,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Lulu International",
-        image: "/gallery/lulu.jpg",
+        image: H5,
         deal: "Modern comfort in the heart of Thrissur"
       },
       {
         name: "Joys Palace",
-        image: "/gallery/joys.jpg",
+        image:H6,
         deal: "Luxury stay with Ayurvedic spa"
       },
       {
         name: "Dass Continental",
-        image: "/gallery/dass.jpg",
+        image:H3,
         deal: "Business-class hotel near key attractions"
       },
       {
         name: "The Garuda Hotel",
-        image: "/gallery/garuda.jpg",
+        image:H4,
         deal: "Affordable comfort with fine dining"
       },
       {
         name: "Niya Regency",
-        image: "/gallery/niya.jpg",
+        image: H1,
         deal: "Charming boutique hotel with city views"
       },
       {
         name: "Pooram International",
-        image: "/gallery/pooram.jpg",
+        image: H2,
         deal: "City-center hotel with cultural decor"
       }
     ]
@@ -1552,32 +1552,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Saradharam Hotel",
-        image: "/gallery/saradharam.jpg",
+        image:H2,
         deal: "Budget hotel near temple"
       },
       {
         name: "Hotel Akshaya",
-        image: "/gallery/akshaya.jpg",
+        image:H1,
         deal: "Clean and comfortable stay close to bus stand"
       },
       {
         name: "Krishna Residency",
-        image: "/gallery/krishnaresidency.jpg",
+        image: H3,
         deal: "Newly built hotel with modern amenities"
       },
       {
         name: "Hotel Grand Park",
-        image: "/gallery/grandpark.jpg",
+        image:H6,
         deal: "A family-friendly stay near pilgrimage sites"
       },
       {
         name: "Hotel RK Residency",
-        image: "/gallery/rkresidency.jpg",
+        image:H5,
         deal: "Affordable rooms with AC and Wi-Fi"
       },
       {
         name: "SABARI Lodge",
-        image: "/gallery/sabari.jpg",
+        image:H4,
         deal: "Basic lodge for spiritual travelers"
       }
     ]
@@ -1642,32 +1642,32 @@ export const travelData = [
     accommodations: [
       {
         name: "JW Marriott",
-        image: "/gallery/marriott.jpg",
+        image:H1,
         deal: "Luxury stay with rooftop views"
       },
       {
         name: "The O Hotel",
-        image: "/gallery/ohotel.jpg",
+        image:H2,
         deal: "Modern rooms near Koregaon Park"
       },
       {
         name: "Hotel Shreyas",
-        image: "/gallery/shreyas.jpg",
+        image: H3,
         deal: "Authentic Maharashtrian food & cozy rooms"
       },
       {
         name: "Treebo Hill View",
-        image: "/gallery/treebo.jpg",
+        image: H4,
         deal: "Mid-range comfort in Deccan"
       },
       {
         name: "Hotel Woodland",
-        image: "/gallery/woodland.jpg",
+        image: H5,
         deal: "Budget-friendly stay in the city center"
       },
       {
         name: "Ginger Pune",
-        image: "/gallery/ginger.jpg",
+        image:H6,
         deal: "Tech-enabled smart hotel for short stays"
       }
     ]
@@ -1730,32 +1730,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Mayfair Lagoon",
-        image: "/gallery/mayfair.jpg",
+        image: H2,
         deal: "Luxury resort with lake views and spa"
       },
       {
         name: "Swosti Premium",
-        image: "/gallery/swosti.jpg",
+        image:H1,
         deal: "Elegant business hotel with rooftop dining"
       },
       {
         name: "Hotel Suncity",
-        image: "/gallery/suncity.jpg",
+        image: H3,
         deal: "Mid-range comfort with travel desk"
       },
       {
         name: "The Crown Bhubaneswar",
-        image: "/gallery/crown.jpg",
+        image:H4,
         deal: "Family-friendly hotel near major sites"
       },
       {
         name: "Ginger Bhubaneswar",
-        image: "/gallery/gingerbh.jpg",
+        image: H5,
         deal: "Budget hotel with smart features"
       },
       {
         name: "Hotel Excellency",
-        image: "/gallery/excellency.jpg",
+        image: H6,
         deal: "Great connectivity and modern amenities"
       }
     ]
@@ -1818,32 +1818,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Dekasang Resort",
-        image: "/gallery/dekasang.jpg",
+        image: H2,
         deal: "Eco-resort built with bamboo architecture"
       },
       {
         name: "La Maison de Ananda",
-        image: "/gallery/ananda.jpg",
+        image:H3,
         deal: "Authentic Assamese stay with river views"
       },
       {
         name: "Ygdrasill Bamboo Cottage",
-        image: "/gallery/ygdrasill.jpg",
+        image: H6,
         deal: "Off-grid eco-cabin experience"
       },
       {
         name: "Majuli Bamboo Hut",
-        image: "/gallery/majulihut.jpg",
+        image: H1,
         deal: "Budget homestay close to Satras"
       },
       {
         name: "Sanjiwani Homestay",
-        image: "/gallery/sanjiwani.jpg",
+        image:H4,
         deal: "Tribal village experience with local meals"
       },
       {
         name: "Okegiga Homes",
-        image: "/gallery/okegiga.jpg",
+        image:H5,
         deal: "Rustic cottages with organic food and cycling tours"
       }
     ]
@@ -1905,32 +1905,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Live Free Hostel",
-        image: "/gallery/livefree.jpg",
+        image:H6,
         deal: "Affordable dorms with yoga classes and social vibes"
       },
       {
         name: "Aloha on the Ganges",
-        image: "/gallery/aloha.jpg",
+        image: H5,
         deal: "Luxury riverside resort with yoga and spa"
       },
       {
         name: "Shiv Shakti Hostel",
-        image: "/gallery/shivshakti.jpg",
+        image: H2,
         deal: "Backpacker-friendly with Ganges view terrace"
       },
       {
         name: "Skyard Hostel",
-        image: "/gallery/skyard.jpg",
+        image:H3,
         deal: "Great rooftop hangout with city views"
       },
       {
         name: "Ganga Kinare",
-        image: "/gallery/gangakinare.jpg",
+        image: H1,
         deal: "Premium hotel with riverside dining"
       },
       {
         name: "Sonu Guesthouse",
-        image: "/gallery/sonuguest.jpg",
+        image:H4,
         deal: "Homely stay near Ram Jhula"
       }
     ]
@@ -1986,32 +1986,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Cuba Patnem",
-        image: "/gallery/cubapatnem.jpg",
+        image: H1,
         deal: "Seaside cottages with great seafood restaurant"
       },
       {
         name: "The LaLiT Golf & Spa Resort",
-        image: "/gallery/lalit.jpg",
+        image:H2,
         deal: "5-star luxury with private beach and golf course"
       },
       {
         name: "Art Resort Goa",
-        image: "/gallery/artresort.jpg",
+        image: H3,
         deal: "Boutique beach resort with vibrant decor"
       },
       {
         name: "Dreamcatcher Resort",
-        image: "/gallery/dreamcatcher.jpg",
+        image: H4,
         deal: "Riverside retreat popular with yoga enthusiasts"
       },
       {
         name: "Beach Hut Goa",
-        image: "/gallery/beachhut.jpg",
+        image: H5,
         deal: "Budget-friendly beach huts steps from the shore"
       },
       {
         name: "Cola Beach Resort",
-        image: "/gallery/cola.jpg",
+        image:H6,
         deal: "Lagoon-front resort with luxury tents"
       }
     ]
@@ -2069,32 +2069,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Rivertrail Eco Camp",
-        image: "/gallery/rivertrail.jpg",
+        image: H6,
         deal: "Raft and camp package in bamboo huts"
       },
       {
         name: "Wildernest Kolad",
-        image: "/gallery/wildernest.jpg",
+        image: H5,
         deal: "Rustic stay with river views"
       },
       {
         name: "Camp River Wild",
-        image: "/gallery/campriver.jpg",
+        image:H4,
         deal: "Tent stays with bonfire and BBQ"
       },
       {
         name: "Sai Farm Retreat",
-        image: "/gallery/saifarm.jpg",
+        image:H3,
         deal: "Farmhouse retreat with homecooked meals"
       },
       {
         name: "Z BAC Adventure Camp",
-        image: "/gallery/zbac.jpg",
+        image:H2,
         deal: "Multi-adventure camp with obstacle course"
       },
       {
         name: "Dewdrops Boutique Retreat",
-        image: "/gallery/dewdrops.jpg",
+        image:H1,
         deal: "Luxury glamping with pool and rafting"
       }
     ]
@@ -2150,32 +2150,32 @@ export const travelData = [
     accommodations: [
       {
         name: "Ziro Palace Inn",
-        image: "/gallery/palaceinn.jpg",
+        image:H1,
         deal: "Budget-friendly stay near the main town"
       },
       {
         name: "Siiro Resort",
-        image: "/gallery/siiro.jpg",
+        image: H4,
         deal: "Modern cottage stay amidst pine trees"
       },
       {
         name: "Ziro Valley Resort",
-        image: "/gallery/zirovalley.jpg",
+        image: H2,
         deal: "Luxury resort with panoramic views"
       },
       {
         name: "Abasa Homestay",
-        image: "/gallery/abasa.jpg",
+        image: H3,
         deal: "Apatani-style hospitality and food"
       },
       {
         name: "Blue Pine Retreat",
-        image: "/gallery/bluepine.jpg",
+        image:H5,
         deal: "Cozy pinewood cottages with firepit"
       },
       {
         name: "Tribe Eco Stay",
-        image: "/gallery/tribeeco.jpg",
+        image:H6,
         deal: "Sustainable huts with cultural experiences"
       }
     ]
