@@ -6,7 +6,7 @@ export const Events = [{
   time: "07:00 PM - 11:00 PM",
   location: "Dome NSCI, Mumbai",
   category: "Music",
-  image: jaipur_G_4,
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753116065/Arijit-Singh-Stage-scaled_p8qfe2.jpg",
 },
 {
   id: 2,
@@ -15,7 +15,7 @@ export const Events = [{
   time: "04:00 PM - 11:00 PM",
   location: "Laxmi Lawns, Pune",
   category: "Music",
-  image: "https://source.unsplash.com/800x600/?festival,music",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119831/NH7-Weekender-2023-Clique-26-1_cxhdzx.jpg",
 },
 {
   id: 3,
@@ -24,7 +24,7 @@ export const Events = [{
   time: "05:00 PM - 12:00 AM",
   location: "Vagator Beach, Goa",
   category: "Music",
-  image: "https://source.unsplash.com/800x600/?edm,festival",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119872/1700637033164_c1bfru.webp",
 },
 {
   id: 4,
@@ -33,7 +33,7 @@ export const Events = [{
   time: "06:30 PM - 10:30 PM",
   location: "Netaji Indoor Stadium, Kolkata",
   category: "Music",
-  image: "https://source.unsplash.com/800x600/?singer,concert",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119968/Concert-of-Shreya-Ghoshal_pxkjcf.jpg",
 },
 {
   id: 5,
@@ -42,7 +42,7 @@ export const Events = [{
   time: "03:00 PM - 11:00 PM",
   location: "Mahalaxmi Racecourse, Mumbai",
   category: "Music",
-  image: "https://source.unsplash.com/800x600/?music,stage",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753120009/lollapalooz-festival_l3webo.jpg",
 },
 {
   id: 6,
@@ -51,7 +51,7 @@ export const Events = [{
   time: "07:00 PM - 10:00 PM",
   location: "Jawaharlal Nehru Stadium, Delhi",
   category: "Music",
-  image: "https://source.unsplash.com/800x600/?band,live",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753120252/indianoceanmusic-3_nc53ac.jpg",
 },
 {
   id: 7,
@@ -60,7 +60,7 @@ export const Events = [{
   time: "07:30 PM - 11:30 PM",
   location: "Narendra Modi Stadium, Ahmedabad",
   category: "Sports",
-  image: "https://source.unsplash.com/800x600/?cricket,stadium",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753116174/1696337437393_modi_jllg9i.webp",
 },
 {
   id: 8,
@@ -69,7 +69,7 @@ export const Events = [{
   time: "05:30 AM - 10:00 AM",
   location: "Jawaharlal Nehru Stadium, Delhi",
   category: "Sports",
-  image: "https://source.unsplash.com/800x600/?marathon,run",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753120311/vbsvmisxpbdufawmqx9n_c7hzi3.jpg",
 },
 {
   id: 9,
@@ -78,7 +78,7 @@ export const Events = [{
   time: "07:00 PM - 09:30 PM",
   location: "Mumbai Football Arena, Mumbai",
   category: "Sports",
-  image: "https://source.unsplash.com/800x600/?football,match",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753120412/ISL-2022-23-Indian-Super-League-Bengaluru-FC-vs-Mumbai-City-Match-Preview_knxlue.jpg",
 },
 {
   id: 10,
@@ -87,7 +87,7 @@ export const Events = [{
   time: "06:00 PM - 09:00 PM",
   location: "Gachibowli Indoor Stadium, Hyderabad",
   category: "Sports",
-  image: "https://source.unsplash.com/800x600/?kabaddi,india",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753120451/QmZ1meOV2o_ec2ajf.jpg",
 },
 {
   id: 11,
@@ -96,7 +96,7 @@ export const Events = [{
   time: "04:00 PM - 09:00 PM",
   location: "SDAT Tennis Stadium, Chennai",
   category: "Sports",
-  image: "https://source.unsplash.com/800x600/?tennis,match",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753120478/IMG_2025_Australian_Open_2_1_L1DTM67U_byxwk0.jpg",
 },
 {
   id: 12,
@@ -105,7 +105,7 @@ export const Events = [{
   time: "02:00 PM - 06:00 PM",
   location: "Rambagh Polo Ground, Jaipur",
   category: "Sports",
-  image: "https://source.unsplash.com/800x600/?polo,horse",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753120612/GdDof39bkAAYdD6_nexbby.jpg",
 },
 {
   id: 13,
@@ -114,7 +114,7 @@ export const Events = [{
   time: "05:00 PM - 08:00 PM",
   location: "Indira Gandhi Indoor Stadium, Delhi",
   category: "Family",
-  image: "https://source.unsplash.com/800x600/?disney,show",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753116351/happily-ever-after-blue-disney_kuirok.jpg",
 },
 {
   id: 14,
@@ -123,7 +123,7 @@ export const Events = [{
   time: "10:00 AM - 06:00 PM",
   location: "KidZania, Mumbai",
   category: "Family",
-  image: "https://source.unsplash.com/800x600/?kids,fun",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753120718/8quh29zjlyojk0qymyq1m4qs9ll5_learn-life-today_anchmm.jpg",
 },
 {
   id: 15,
@@ -132,7 +132,7 @@ export const Events = [{
   time: "11:00 AM - 07:00 PM",
   location: "White Orchid Convention Center, Bengaluru",
   category: "Family",
-  image: "https://source.unsplash.com/800x600/?lego,event",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753120729/lego-festival-decoy_hixnul.webp",
 },
 {
   id: 16,
@@ -141,7 +141,7 @@ export const Events = [{
   time: "10:00 AM - 05:00 PM",
   location: "Hitex Exhibition Center, Hyderabad",
   category: "Family",
-  image: "https://source.unsplash.com/800x600/?pets,exhibition",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753120822/111991ee-cb13-4c13-b703-7214b2445300-Paw_and_Claws_wwpkgn.jpg",
 },
 {
   id: 17,
@@ -150,7 +150,7 @@ export const Events = [{
   time: "12:00 PM - 09:00 PM",
   location: "Adventure Island, Rohini, Delhi",
   category: "Family",
-  image: "https://source.unsplash.com/800x600/?amusement,park",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753120830/pexels-mihai-vlasceanu-1403653-1024x741_muwfh4.jpg",
 },
 {
   id: 18,
@@ -159,7 +159,7 @@ export const Events = [{
   time: "09:00 AM - 06:00 PM",
   location: "Chennai Trade Centre, Chennai",
   category: "Family",
-  image: "https://source.unsplash.com/800x600/?science,expo",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753120905/elementary-school-students-sitting-behind-260nw-2452912053_qaqolr.jpg",
 },
 {
   id: 19,
@@ -168,7 +168,7 @@ export const Events = [{
   time: "10:00 AM - 09:00 PM",
   location: "Kala Ghoda, Mumbai",
   category: "Arts",
-  image: "https://source.unsplash.com/800x600/?art,festival",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753116482/1649148575664230103_dqqqfj.jpg",
 },
 {
   id: 20,
@@ -177,7 +177,7 @@ export const Events = [{
   time: "09:00 AM - 08:00 PM",
   location: "Diggi Palace, Jaipur",
   category: "Arts",
-  image: "https://source.unsplash.com/800x600/?book,event",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753121174/jaipur-fest_pwrw71.jpg",
 },
 {
   id: 21,
@@ -186,7 +186,7 @@ export const Events = [{
   time: "11:00 AM - 07:00 PM",
   location: "NSIC Exhibition Grounds, Delhi",
   category: "Arts",
-  image: "https://source.unsplash.com/800x600/?art,exhibition",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753121176/3210b672258a3743c5809a9d8381de000e120325-2183x1455_nxilbr.jpg",
 },
 {
   id: 22,
@@ -195,7 +195,7 @@ export const Events = [{
   time: "05:00 PM - 10:00 PM",
   location: "Various Sabhas, Chennai",
   category: "Arts",
-  image: "https://source.unsplash.com/800x600/?classical,music",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753121219/RaGa-sisters-Ranjani-and-Gayathri-Credit-for-all-photos-Sudha_bfhdco.jpg",
 },
 {
   id: 23,
@@ -204,7 +204,7 @@ export const Events = [{
   time: "10:00 AM - 10:00 PM",
   location: "Nandan Cinema Complex, Kolkata",
   category: "Arts",
-  image: "https://source.unsplash.com/800x600/?film,festival",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753121250/1671119233_lead-18_cvan7n.jpg",
 },
 {
   id: 24,
@@ -213,7 +213,7 @@ export const Events = [{
   time: "06:00 PM - 10:00 PM",
   location: "Shilpakala Vedika, Hyderabad",
   category: "Arts",
-  image: "https://source.unsplash.com/800x600/?theatre,stage",
+  image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1753121272/Ram-KatKatha-a-play-at-Manam-Theatre-Festival-1-770x433_xavg6t.jpg",
 },
 
 ]

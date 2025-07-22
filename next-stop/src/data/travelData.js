@@ -154,17 +154,17 @@ export const travelData = [
     "Varanasi, also known as Kashi or Banaras, is one of the oldest continuously inhabited cities in the world. It is a sacred hub for Hindus, sitting on the banks of the holy Ganges River. The city is renowned for its vibrant ghats, spiritual rituals, and a unique blend of ancient tradition and modern hustle. Home to saints, temples, and profound philosophies, Varanasi leaves an eternal impression on every visitor.",
   image: varanasi, // your imported image
   galleryImages: [
-    "https://example.com/images/varanasi1.jpg",
-    "https://example.com/images/varanasi2.jpg",
-    "https://example.com/images/varanasi3.jpg",
-    "https://example.com/images/varanasi4.jpg",
-    "https://example.com/images/varanasi5.jpg",
-    "https://example.com/images/varanasi6.jpg",
-    "https://example.com/images/varanasi7.jpg",
-    "https://example.com/images/varanasi8.jpg",
-    "https://example.com/images/varanasi9.jpg",
-    "https://example.com/images/varanasi10.jpg",
-    "https://example.com/images/varanasi11.jpg"
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753117259/manikarnika-ghat-city-hero_ekfxxs.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753117369/images_tu6pj2.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753117426/ramnagar-fort-varanasi-2-attr-hero_um2fax.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753117239/Image-1_Malaiyo-1024x538_kurwsi.png",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753117874/shri-kashi-vishwanath_im5fo8.jpg",
+    " https://res.cloudinary.com/dkybreoaz/image/upload/v1753118400/ksp_5075_coroyv.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753118138/Boat_ride_at_Sunrise_2C_on_the_Ganges_2C_Varanasi_pqmuic.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753118316/FM7r3baacAUcRHC_o0qiwk.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753117874/shri-kashi-vishwanath_im5fo8.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753118521/caption_yqp5gn.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753118612/Cremation-Ghats-in-Varanasi_hxvfng.jpg"
   ],
   thingsToDo: [
     {
@@ -246,17 +246,17 @@ export const travelData = [
   fullDescription: "Amritsar is a sacred city in Punjab and the spiritual center of Sikhism. The city’s crown jewel, the Golden Temple, draws millions of pilgrims every year. Beyond spiritual significance, Amritsar is known for its poignant history, particularly the Jallianwala Bagh massacre, and the patriotic Wagah Border ceremony. The city's street food and vibrant Punjabi culture add to its magnetic charm.",
   image: Amritsar,
   galleryImages: [
-    "/gallery/amritsar1.jpg",
-    "/gallery/amritsar2.jpg",
-    "/gallery/amritsar3.jpg",
-    "/gallery/amritsar4.jpg",
-    "/gallery/amritsar5.jpg",
-    "/gallery/amritsar6.jpg",
-    "/gallery/amritsar7.jpg",
-    "/gallery/amritsar8.jpg",
-    "/gallery/amritsar9.jpg",
-    "/gallery/amritsar10.jpg",
-    "/gallery/amritsar11.jpg"
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753118819/india-amritsar-top-attractions-golden-temple_bt3qbw.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119003/120337061_gettyimages-1234943959-594x594-1_dbtwva.webp",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119015/1-partition-museum-amritsar-punjab-attr-hero_fs4zhq.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753118693/abc49719bd9c53c7006e4c5794626530_rim1y6.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753118743/5ea5tweohm851_sncah4.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753118819/india-amritsar-top-attractions-golden-temple_bt3qbw.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753118875/isitors-watch-security-personnel-perform-during-the-beating-retreat-ceremony-at-the-attari-wagah-border-near-amritsar-1726053317_xxw6la.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753118899/sdlce2s8a3fnlgnqu2v85fclr4mn_original_shutterstock_1294137358_bhkeiv.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119003/120337061_gettyimages-1234943959-594x594-1_dbtwva.webp",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119015/1-partition-museum-amritsar-punjab-attr-hero_fs4zhq.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119121/1-gobindgarh-fort-amritsar-punjab-attr-hero_xa7una.jpg"
   ],
   thingsToDo: [
     {
@@ -432,11 +432,11 @@ export const travelData = [
   galleryImages: [
     "/gallery/lucknow1.jpg",
     "/gallery/lucknow2.jpg",
-    "/gallery/lucknow3.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119366/khajuraho-india-temple-complex_mgfgg6.jpg",
     "/gallery/lucknow4.jpg",
     "/gallery/lucknow5.jpg",
-    "/gallery/lucknow6.jpg",
-    "/gallery/lucknow7.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119366/khajuraho-india-temple-complex_mgfgg6.jpg",
+    "https://res.cloudinary.com/dkybreoaz/image/upload/v1753119520/Western_Group_of_Temples_2C_Khajuraho_20_fdrriy.jpg",
     "/gallery/lucknow8.jpg",
     "/gallery/lucknow9.jpg",
     "/gallery/lucknow10.jpg",

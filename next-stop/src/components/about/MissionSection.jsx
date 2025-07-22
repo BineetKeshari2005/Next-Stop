@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGlobe, FaLeaf, FaHiking } from 'react-icons/fa';
-import jaipur_G_1 from '../../assets/images/jaipur_G_1.jpg';
+
 
 export default function MissionSection() {
   return (
@@ -18,7 +18,7 @@ export default function MissionSection() {
           className="md:w-1/2 w-full"
         >
           <img
-            src={jaipur_G_1}
+            src= "https://res.cloudinary.com/dkybreoaz/image/upload/v1753116945/360_F_568802778_qiJpPUOFAU3yA91IcJm4pQg07DcXKDb0_iunahj.jpg"
             alt="Team Group"
             className="rounded-2xl shadow-xl object-cover w-full h-[420px]"
           />

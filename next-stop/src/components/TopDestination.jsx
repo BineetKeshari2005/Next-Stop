@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { FaMountain, FaLandmark, FaPalette, FaHiking } from 'react-icons/fa';
 import varanasi from '../assets/images/varanasi.jpg';
-// import nainital from '../assets/images/nainital.jpg';
-// import kolkata from '../assets/images/kolkata.jpg';
-// import ziro from '../assets/images/ziro.jpg';
+import nainital from '../assets/images/nainital.jpg';
+import kolkata from '../assets/images/kolkata.jpg';
+import ziro from '../assets/images/ziro.jpg';
 
 const destinations = [
   {
@@ -14,19 +14,19 @@ const destinations = [
   },
   {
     name: "Nainital, Uttarakhand",
-    image: varanasi,
+    image:nainital,
     description: "The Lake District of India",
     icon: <FaMountain className="text-3xl text-green-700" />,
   },
   {
     name: "Kolkata, West Bengal",
-    image: varanasi,
+    image: kolkata,
     description: "City of Joy and Culture",
     icon: <FaPalette className="text-3xl text-red-700" />,
   },
   {
     name: "Ziro Valley, Arunachal Pradesh",
-    image: varanasi,
+    image: ziro,
     description: "Land of Pine Hills and Tribes",
     icon: <FaHiking className="text-3xl text-blue-700" />,
   },

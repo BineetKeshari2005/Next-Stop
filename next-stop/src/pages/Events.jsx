@@ -81,9 +81,7 @@ export default function EventsPage() {
           >
             Passion is the occasion
           </motion.h1>
-          <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-full flex items-center w-fit">
-            Discover all events <ArrowRight className="ml-2 w-4 h-4" />
-          </button>
+
         </div>
 
         {/* Peek Slider */}
