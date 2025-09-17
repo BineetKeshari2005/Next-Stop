@@ -1,5 +1,5 @@
 import Ashutosh from "../../assets/images/Ashutosh.jpg"
-import Sachin from "../../assets/images/Sachin.jpg"
+import Sachin from "../../assets/images/sachin.jpg"
 
 export const teamData = [
 
