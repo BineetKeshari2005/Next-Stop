@@ -3,7 +3,7 @@ import { FaMountain, FaLandmark, FaPalette, FaHiking } from 'react-icons/fa';
 import varanasi from '../assets/images/varanasi.jpg';
 import nainital from '../assets/images/varanasi.jpg';
 import kolkata from '../assets/images/Kolkata.jpg';
-import ziro from '../assets/images/ziro.jpg';
+import ziro from '../assets/images/varanasi.jpg';
 
 const destinations = [
   {
