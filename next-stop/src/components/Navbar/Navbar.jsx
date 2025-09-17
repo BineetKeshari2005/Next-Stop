@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useRef } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import { auth } from '../../Firebase/Firebase';
@@ -25,7 +25,16 @@ export default function Navbar() {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
 
   const [showMenu, setShowMenu] = useState(false); // For left dropdown
-
+  const menuRef = useRef(null);
+  useEffect(() => {
+  function handleClickOutside(event) {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setShowMenu(false);
+    }
+  }
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => document.removeEventListener("mousedown", handleClickOutside);
+}, []);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -108,7 +117,7 @@ const handleAuthSubmit = async (e) => {
       <ExploreIndiaMap />
 
       {/* Left Dropdown Menu */}
-      <div className="relative">
+      <div className="relative" ref={menuRef}>
 <button
   onClick={() => setShowMenu(!showMenu)}
   className="group flex items-center gap-2 bg-[#F5DEB3] px-4 py-2 rounded-full shadow-md text-[#800000] font-semibold hover:bg-[#e8cfa1] transition-all duration-300"
