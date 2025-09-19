@@ -14,7 +14,7 @@ const destinations = [
   },
   {
     name: "Nainital, Uttarakhand",
-    image:nainital,
+    image:"https://res.cloudinary.com/dkybreoaz/image/upload/v1758286877/Nainital_vtsyew.jpg",
     description: "The Lake District of India",
     icon: <FaMountain className="text-3xl text-green-700" />,
   },
