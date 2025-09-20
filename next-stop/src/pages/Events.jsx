@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+// src/pages/EventsPage.jsx
+import React, { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { Events } from "../data/Events";
@@ -6,16 +8,17 @@ import EventCard from "../components/explore/InnerPages/EventCard";
 import { Faqs } from "../data/Faqs.js";
 
 const categories = ["All", "Music", "Sports", "Family", "Arts"];
+const navbarHeight = 72; // px
 
 export default function EventsPage() {
+  const location = useLocation();
+  const filterRef = useRef(null);
+  const cardsRef = useRef(null);
+
   const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [topIndex, setTopIndex] = useState(0);
-
-  const filteredEvents =
-    activeCategory === "All"
-      ? Events
-      : Events.filter((e) => e.category === activeCategory);
 
   // Hero events: first event of each category
   const uniqueCategoryEvents = categories
@@ -27,7 +30,7 @@ export default function EventsPage() {
   const heroEventIds = uniqueCategoryEvents.map((e) => e.id);
   const remainingEvents = Events.filter((e) => !heroEventIds.includes(e.id));
 
-  // Top 10 events
+  // Top 10 events for slider
   const topEvents = [
     ...remainingEvents.filter((e) => e.category === "Music").slice(0, 3),
     ...remainingEvents.filter((e) => e.category === "Sports").slice(0, 3),
@@ -37,10 +40,9 @@ export default function EventsPage() {
 
   const cardsPerPage = 5;
   const maxIndex = topEvents.length - cardsPerPage;
-
   const visibleEvents = topEvents.slice(topIndex, topIndex + cardsPerPage);
 
-  // Hero auto-slide
+  // Auto-slide hero events
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex(
@@ -50,13 +52,50 @@ export default function EventsPage() {
     return () => clearInterval(interval);
   }, [uniqueCategoryEvents]);
 
-  const nextTop = () => {
-    setTopIndex((prev) => (prev < maxIndex ? prev + 1 : prev));
+  const nextTop = () => setTopIndex((prev) => (prev < maxIndex ? prev + 1 : prev));
+  const prevTop = () => setTopIndex((prev) => (prev > 0 ? prev - 1 : prev));
+
+  // If coming from TopEvents, set category and scroll to filter
+  useEffect(() => {
+    if (location.state?.fromTopEvents && location.state.category) {
+      setActiveCategory(location.state.category);
+      setSearchQuery(""); // reset search
+      setTimeout(() => {
+        if (filterRef.current) {
+          const offsetTop =
+            filterRef.current.getBoundingClientRect().top +
+            window.pageYOffset -
+            navbarHeight -
+            8;
+          window.scrollTo({ top: offsetTop, behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, [location.state]);
+
+  // Scroll to top of event cards on category change
+  const handleCategoryClick = (cat) => {
+    setActiveCategory(cat);
+    setTimeout(() => {
+      if (cardsRef.current) {
+        const offsetTop =
+          cardsRef.current.getBoundingClientRect().top +
+          window.pageYOffset -
+          (filterRef.current?.offsetHeight || 0) -
+          16;
+        window.scrollTo({ top: offsetTop, behavior: "smooth" });
+      }
+    }, 50);
   };
 
-  const prevTop = () => {
-    setTopIndex((prev) => (prev > 0 ? prev - 1 : prev));
-  };
+  // Filter events based on active category + search
+  const filteredEvents = Events.filter((e) => {
+    const matchCategory = activeCategory === "All" || e.category === activeCategory;
+    const matchSearch =
+      e.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      e.location.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchCategory && matchSearch;
+  });
 
   return (
     <div className="w-full bg-[#fffaf0] text-gray-900">
@@ -70,8 +109,6 @@ export default function EventsPage() {
           src="https://www.w3schools.com/howto/rain.mp4"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-teal-700 opacity-70"></div>
-
-        {/* Text */}
         <div className="relative z-10 flex flex-col justify-center h-full px-10 max-w-4xl">
           <motion.h1
             className="text-white text-5xl font-bold mb-6"
@@ -80,46 +117,6 @@ export default function EventsPage() {
           >
             Passion is the occasion
           </motion.h1>
-        </div>
-
-        {/* Peek Slider */}
-        <div className="absolute top-10 right-10 z-20 w-[100%] max-w-[450px] overflow-hidden rounded-xl">
-          <motion.div
-            className="flex gap-5"
-            animate={{ x: `-${currentIndex * 320}px` }}
-            transition={{ type: "spring", stiffness: 120, damping: 20 }}
-          >
-            {uniqueCategoryEvents.map((event) => (
-              <div
-                key={event.id}
-                className="w-[300px] h-[400px] bg-white bg-opacity-90 backdrop-blur rounded-xl overflow-hidden flex-shrink-0"
-              >
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="w-full h-[70%] object-cover"
-                />
-                <div className="p-4">
-                  <h4 className="font-semibold text-base line-clamp-2">
-                    {event.title}
-                  </h4>
-                  <p className="text-xs text-gray-500 mt-1">{event.date}</p>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Dots */}
-          <div className="flex justify-center mt-3 space-x-2">
-            {uniqueCategoryEvents.map((_, idx) => (
-              <div
-                key={idx}
-                className={`w-2 h-2 rounded-full ${
-                  idx === currentIndex ? "bg-emerald-500" : "bg-gray-300"
-                }`}
-              />
-            ))}
-          </div>
         </div>
       </div>
 
@@ -141,8 +138,9 @@ export default function EventsPage() {
             {visibleEvents.map((event, i) => (
               <motion.div
                 key={event.id}
-                className="min-w-[300px] flex-shrink-0 bg-white text-gray-900 rounded-2xl overflow-hidden shadow-xl"
+                className="min-w-[300px] flex-shrink-0 bg-white text-gray-900 rounded-2xl overflow-hidden shadow-xl cursor-pointer"
                 whileHover={{ scale: 1.05 }}
+                onClick={() => handleCategoryClick(event.category)} // show all cards
               >
                 <div className="relative">
                   <img
@@ -174,25 +172,59 @@ export default function EventsPage() {
         </div>
       </div>
 
-      {/* Category Filters */}
-      <div className="flex justify-center mt-10 space-x-4">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
-            className={`${
-              activeCategory === cat
-                ? "bg-[#800000] text-white"
-                : "border-2 border-[#800000]"
-            } rounded-full px-5 py-2 font-medium hover:bg-[#800000] text-[#800000] transition hover:text-white`}
-          >
-            {cat}
-          </button>
-        ))}
+      {/* Sticky Search + Filter */}
+      <div
+        ref={filterRef}
+        className="sticky top-[72px] z-30 bg-[#fffaf0] pt-4 pb-4 px-6 shadow-md"
+      >
+        {/* Search */}
+        <div className="max-w-xl mx-auto mb-4 relative">
+          <input
+            type="text"
+            placeholder="Search by event or city..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full border-2 border-[#800000] rounded-full px-12 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 shadow-sm transition placeholder:text-gray-400"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery("")}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+            >
+              ×
+            </button>
+          )}
+        </div>
+
+        {/* Category Filters */}
+        <div className="flex justify-center space-x-4 flex-wrap">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => handleCategoryClick(cat)}
+              className={`${
+                activeCategory === cat
+                  ? "bg-[#800000] text-white"
+                  : "border-2 border-[#800000]"
+              } rounded-full px-5 py-2 font-medium hover:bg-[#800000] text-[#800000] transition hover:text-white`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Event Cards */}
-      <div className="px-10 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div
+        ref={cardsRef}
+        className="px-10 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        style={{ marginTop: "16px" }}
+      >
+        {filteredEvents.length === 0 && (
+          <p className="text-center text-xl text-gray-500 col-span-full">
+            No events found.
+          </p>
+        )}
         {filteredEvents.map((event) => (
           <EventCard key={event.id} event={event} />
         ))}

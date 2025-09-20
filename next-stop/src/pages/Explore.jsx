@@ -1,5 +1,5 @@
 // src/pages/Explore.jsx
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import CityCard from "../components/explore/CityCard";
@@ -18,6 +18,7 @@ function useQuery() {
 }
 
 export default function Explore() {
+  const location = useLocation();
   const query = useQuery();
   const initialCategory = query.get("category") || "All";
 
@@ -26,11 +27,26 @@ export default function Explore() {
   const [filteredData, setFilteredData] = useState(travelData);
 
   const NAVBAR_HEIGHT = 72; // px
+  const cardsRef = useRef(null);
 
-  // Update category
+  // Reset search & scroll when coming from categories
   useEffect(() => {
-    setActiveCategory(initialCategory);
-  }, [initialCategory]);
+    if (location.state?.fromCategoriesPage) {
+      setSearchQuery("");
+      setActiveCategory(initialCategory);
+
+      setTimeout(() => {
+        if (cardsRef.current) {
+          const offsetTop =
+            cardsRef.current.getBoundingClientRect().top +
+            window.pageYOffset -
+            NAVBAR_HEIGHT -
+            16;
+          window.scrollTo({ top: offsetTop, behavior: "smooth" });
+        }
+      }, 50);
+    }
+  }, [location.state, initialCategory]);
 
   // Filter places based on category + search query
   useEffect(() => {
@@ -50,6 +66,22 @@ export default function Explore() {
 
     setFilteredData(newFilteredData);
   }, [activeCategory, searchQuery]);
+
+  // Scroll to top of filtered cards on category button click
+  const handleCategoryClick = (catKey) => {
+    setActiveCategory(catKey);
+    setSearchQuery(""); // reset search
+    setTimeout(() => {
+      if (cardsRef.current) {
+        const offsetTop =
+          cardsRef.current.getBoundingClientRect().top +
+          window.pageYOffset -
+          NAVBAR_HEIGHT -
+          16;
+        window.scrollTo({ top: offsetTop, behavior: "smooth" });
+      }
+    }, 50);
+  };
 
   return (
     <div className="bg-[#fffaf0] text-[#800000]">
@@ -77,28 +109,11 @@ export default function Explore() {
         </motion.div>
       </section>
 
-      {/* Sticky Filter + Search */}
+      {/* Sticky Search + Filter */}
       <div
-        className="sticky z-20 bg-[#fffaf0] shadow-md py-4 flex flex-col items-center space-y-4"
+        className="sticky z-20 bg-[#fffaf0] shadow-md pt-4 flex flex-col items-center space-y-4 pb-6"
         style={{ top: NAVBAR_HEIGHT }}
       >
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4">
-          {categories.map((cat) => (
-            <button
-              key={cat.key}
-              onClick={() => setActiveCategory(cat.key)}
-              className={`${
-                activeCategory === cat.key
-                  ? "bg-[#800000] text-white"
-                  : "border-2 border-[#800000]"
-              } rounded-full px-5 py-2 font-medium hover:bg-[#800000] text-[#800000] transition hover:text-white`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-
         {/* Search Bar */}
         <div className="relative w-full max-w-xl">
           <input
@@ -108,7 +123,6 @@ export default function Explore() {
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full border-2 border-[#800000] rounded-full px-12 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 shadow-sm transition duration-300 placeholder:text-gray-400"
           />
-          {/* Search Icon */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
@@ -123,8 +137,6 @@ export default function Explore() {
               d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"
             />
           </svg>
-
-          {/* Clear Button */}
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}
@@ -134,16 +146,32 @@ export default function Explore() {
             </button>
           )}
         </div>
+
+        {/* Category Filter Buttons */}
+        <div className="flex flex-wrap justify-center gap-4">
+          {categories.map((cat) => (
+            <button
+              key={cat.key}
+              onClick={() => handleCategoryClick(cat.key)}
+              className={`${
+                activeCategory === cat.key
+                  ? "bg-[#800000] text-white"
+                  : "border-2 border-[#800000]"
+              } rounded-full px-5 py-2 font-medium hover:bg-[#800000] text-[#800000] transition hover:text-white`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Destination Cards */}
-      <div className="px-6 py-12 max-w-7xl mx-auto">
+      <div ref={cardsRef} className="px-6 py-12 max-w-7xl mx-auto">
         {filteredData.length === 0 && (
           <p className="text-center text-xl text-gray-500 mt-20">
             No places found.
           </p>
         )}
-
         {filteredData.map((category) => (
           <div key={category.category} className="mb-16">
             <h2 className="text-3xl font-semibold text-[#843d1c] mb-11 mt-11 text-center">
