@@ -31,7 +31,7 @@ export default function Home() {
             Discover places, plan trips, and make memories.
           </p>
           <Link to="/explore"
-            whileHover={{ scale: 1.1 }}
+            whilehover={{ scale: 1.1 }}
             className="bg-[#f5deb3] text-[#800000] font-semibold px-6 py-3 rounded shadow-md hover:bg-[#e6c9a3] transition"
           >
             Explore Now

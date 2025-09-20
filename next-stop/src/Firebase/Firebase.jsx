@@ -1,6 +1,8 @@
 import {initializeApp} from "firebase/app"
-import {getFirestore} from "firebase/firestore"
+import {getFirestore,collection, setDoc,doc} from "firebase/firestore"
 import {getAuth} from "firebase/auth"
+import {Events} from "../data/Events.js"
+import React, { useEffect, useState } from "react";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -14,3 +16,15 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig)
 export const auth = getAuth(app)
 export const db = getFirestore(app);
+
+async function uploadEvents(){
+  try {
+    for (let event of Events) {
+      await setDoc(doc(db, "events", event.id.toString()), event);
+    }
+    console.log(" Events uploaded successfully!");
+  } catch (e) {
+    console.error(" Error uploading events: ", e);
+  }
+}
+uploadEvents();

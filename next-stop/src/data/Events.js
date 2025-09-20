@@ -1,3 +1,39 @@
+// import React, { useEffect, useState } from "react";
+// import { fetchEvents } from "../Firebase/eventsAPI"; // import your "API"
+// import { motion } from "framer-motion";
+
+// const Events = () => {
+//   const [events, setEvents] = useState([]);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     fetchEvents().then(data => {
+//       setEvents(data);
+//       setLoading(false);
+//     });
+//   }, []);
+
+//   // if (loading) return <p>Loading events...</p>;
+
+//   return (
+//     <div className="events-grid">
+//       {events.map(event => (
+//         <motion.div key={event.id} className="event-card" whileHover={{ scale: 1.05 }}>
+//           <img src={event.image} alt={event.title} className="event-img" />
+//           <h3>{event.title}</h3>
+//           <p>{event.date} | {event.time}</p>
+//           <p>{event.location}</p>
+//         </motion.div>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default Events;
+
+
+
+
 import jaipur_G_4 from "../assets/images/jaipur_G_4.jpg"
 export const Events = [{
   id: 1,

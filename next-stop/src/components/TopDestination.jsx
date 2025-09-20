@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaMountain, FaLandmark, FaPalette, FaHiking } from 'react-icons/fa';
 import varanasi from '../assets/images/varanasi.jpg';
-import nainital from '../assets/images/varanasi.jpg';
 import kolkata from '../assets/images/Kolkata.jpg';
 import ziro from '../assets/images/varanasi.jpg';
 
@@ -26,7 +25,7 @@ const destinations = [
   },
   {
     name: "Ziro Valley, Arunachal Pradesh",
-    image: ziro,
+    image: "https://res.cloudinary.com/dkybreoaz/image/upload/v1758287133/Ziro_fwvffx.webp",
     description: "Land of Pine Hills and Tribes",
     icon: <FaHiking className="text-3xl text-blue-700" />,
   },
