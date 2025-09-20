@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowLeft, Calendar, MapPin } from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import { Events } from "../data/Events";
 import EventCard from "../components/explore/InnerPages/EventCard";
-import {Faqs} from "../data/Faqs.js"
+import { Faqs } from "../data/Faqs.js";
+
 const categories = ["All", "Music", "Sports", "Family", "Arts"];
-const events = Events;
 
 export default function EventsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -14,18 +14,18 @@ export default function EventsPage() {
 
   const filteredEvents =
     activeCategory === "All"
-      ? events
-      : events.filter((e) => e.category === activeCategory);
+      ? Events
+      : Events.filter((e) => e.category === activeCategory);
 
   // Hero events: first event of each category
   const uniqueCategoryEvents = categories
     .filter((c) => c !== "All")
-    .map((cat) => events.find((e) => e.category === cat))
+    .map((cat) => Events.find((e) => e.category === cat))
     .filter(Boolean);
 
   // Remove hero events from top events
   const heroEventIds = uniqueCategoryEvents.map((e) => e.id);
-  const remainingEvents = events.filter((e) => !heroEventIds.includes(e.id));
+  const remainingEvents = Events.filter((e) => !heroEventIds.includes(e.id));
 
   // Top 10 events
   const topEvents = [
@@ -35,29 +35,28 @@ export default function EventsPage() {
     ...remainingEvents.filter((e) => e.category === "Arts").slice(0, 2),
   ].slice(0, 10);
 
+  const cardsPerPage = 5;
+  const maxIndex = topEvents.length - cardsPerPage;
+
+  const visibleEvents = topEvents.slice(topIndex, topIndex + cardsPerPage);
+
   // Hero auto-slide
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev === uniqueCategoryEvents.length - 1 ? 0 : prev + 1));
+      setCurrentIndex(
+        (prev) => (prev === uniqueCategoryEvents.length - 1 ? 0 : prev + 1)
+      );
     }, 2500);
     return () => clearInterval(interval);
   }, [uniqueCategoryEvents]);
 
-  const cardsPerPage = 5;
-
   const nextTop = () => {
-    setTopIndex((prev) =>
-      prev < topEvents.length - cardsPerPage ? prev + 1 : prev
-    );
+    setTopIndex((prev) => (prev < maxIndex ? prev + 1 : prev));
   };
 
   const prevTop = () => {
     setTopIndex((prev) => (prev > 0 ? prev - 1 : prev));
   };
-
-  const maxIndex = topEvents.length - cardsPerPage;
-
-  const visibleEvents = topEvents.slice(topIndex, topIndex + cardsPerPage);
 
   return (
     <div className="w-full bg-[#fffaf0] text-gray-900">
@@ -81,21 +80,19 @@ export default function EventsPage() {
           >
             Passion is the occasion
           </motion.h1>
-
         </div>
 
         {/* Peek Slider */}
-        <div className="absolute top-10 right-10 z-20 w-[450px] overflow-hidden rounded-xl ">
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{
-              transform: `translateX(-${currentIndex * 320}px)`,
-            }}
+        <div className="absolute top-10 right-10 z-20 w-[100%] max-w-[450px] overflow-hidden rounded-xl">
+          <motion.div
+            className="flex gap-5"
+            animate={{ x: `-${currentIndex * 320}px` }}
+            transition={{ type: "spring", stiffness: 120, damping: 20 }}
           >
-            {uniqueCategoryEvents.map((event, index) => (
+            {uniqueCategoryEvents.map((event) => (
               <div
-                key={index}
-                className="w-[300px] h-[400px] bg-white bg-opacity-90 backdrop-blur rounded-xl overflow-hidden flex-shrink-0 mr-5"
+                key={event.id}
+                className="w-[300px] h-[400px] bg-white bg-opacity-90 backdrop-blur rounded-xl overflow-hidden flex-shrink-0"
               >
                 <img
                   src={event.image}
@@ -103,12 +100,14 @@ export default function EventsPage() {
                   className="w-full h-[70%] object-cover"
                 />
                 <div className="p-4">
-                  <h4 className="font-semibold text-base line-clamp-2">{event.title}</h4>
+                  <h4 className="font-semibold text-base line-clamp-2">
+                    {event.title}
+                  </h4>
                   <p className="text-xs text-gray-500 mt-1">{event.date}</p>
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Dots */}
           <div className="flex justify-center mt-3 space-x-2">
@@ -118,7 +117,7 @@ export default function EventsPage() {
                 className={`w-2 h-2 rounded-full ${
                   idx === currentIndex ? "bg-emerald-500" : "bg-gray-300"
                 }`}
-              ></div>
+              />
             ))}
           </div>
         </div>
@@ -182,7 +181,9 @@ export default function EventsPage() {
             key={cat}
             onClick={() => setActiveCategory(cat)}
             className={`${
-              activeCategory === cat ? "bg-[#800000] text-white"  : "border-2 border-[#800000]  "
+              activeCategory === cat
+                ? "bg-[#800000] text-white"
+                : "border-2 border-[#800000]"
             } rounded-full px-5 py-2 font-medium hover:bg-[#800000] text-[#800000] transition hover:text-white`}
           >
             {cat}
@@ -190,34 +191,26 @@ export default function EventsPage() {
         ))}
       </div>
 
-      
-     {/* Event Cards */}
-<div className="px-10 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Event Cards */}
+      <div className="px-10 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredEvents.map((event) => (
+          <EventCard key={event.id} event={event} />
+        ))}
+      </div>
 
-
-  {filteredEvents.map((event) => (
-    <EventCard key={event.id} event={event} />
-  ))}
-</div>
-
-{/* FAQ */}
-<div className=" px-10 py-12 max-w-4xl ">
-  <h2 className="text-3xl font-bold mb-6">Frequently asked questions</h2>
-  {Faqs.map((faq) => (
-    <details
-      key={faq.id}
-      className="border-b py-4 cursor-pointer"
-    >
-      <summary className="font-semibold text-lg flex justify-between items-center">
-        {faq.question}
-        <span className="ml-2">▼</span>
-      </summary>
-      <p className="mt-2 text-gray-600">{faq.answer}</p>
-    </details>
-  ))}
-</div>
-
-
+      {/* FAQ */}
+      <div className="px-10 py-12 max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
+        {Faqs.map((faq) => (
+          <details key={faq.id} className="border-b py-4 cursor-pointer">
+            <summary className="font-semibold text-lg flex justify-between items-center">
+              {faq.question}
+              <span className="ml-2">▼</span>
+            </summary>
+            <p className="mt-2 text-gray-600">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
     </div>
   );
 }

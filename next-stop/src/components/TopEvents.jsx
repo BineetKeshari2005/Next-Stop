@@ -1,3 +1,4 @@
+// src/components/TopEvents.jsx
 import { motion } from 'framer-motion';
 import { Events } from '../data/Events';
 import { FaMusic, FaFutbol, FaUsers, FaPaintBrush } from 'react-icons/fa';
@@ -18,8 +19,8 @@ const topEvents = categories.map((category) =>
 export default function TopEvents() {
   const navigate = useNavigate();
 
-  const handleCardClick = () => {
-    navigate("/events");
+  const handleCardClick = (category) => {
+    navigate("/events", { state: { fromTopEvents: true, category } });
   };
 
   return (
@@ -29,7 +30,7 @@ export default function TopEvents() {
         {topEvents.map((event) => (
           <motion.div
             key={event.id}
-            onClick={handleCardClick}
+            onClick={() => handleCardClick(event.category)}
             whileHover={{ y: -6, boxShadow: '0px 10px 30px rgba(189, 119, 90, 0.5)' }}
             className="bg-white rounded-xl overflow-hidden shadow-md cursor-pointer transition-transform"
           >
