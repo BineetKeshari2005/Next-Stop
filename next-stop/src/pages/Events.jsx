@@ -106,19 +106,76 @@ export default function EventsPage() {
           autoPlay
           muted
           loop
-          src="https://www.w3schools.com/howto/rain.mp4"
+          src="https://res.cloudinary.com/dkybreoaz/video/upload/v1758503898/Take_It_Easy_Official_Live_Video_2_rkcb5x.mov"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-teal-700 opacity-70"></div>
+
         <div className="relative z-10 flex flex-col justify-center h-full px-10 max-w-4xl">
-          <motion.h1
+          {/* <motion.h1
             className="text-white text-5xl font-bold mb-6"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
           >
             Passion is the occasion
-          </motion.h1>
+          </motion.h1> */}
+        </div>
+        
+{/* Peek Slider (Top Right, Responsive) */}
+<div
+  className="absolute z-20 
+             top-4 right-4 
+             sm:top-6 sm:right-6 
+             md:top-10 md:right-10
+             w-[180px] sm:w-[220px] md:w-[320px] 
+             overflow-hidden rounded-xl shadow-lg"
+>
+  <motion.div
+    className="flex"
+    animate={{ x: `-${currentIndex * 100}%` }} // percentage instead of cardWidth
+    transition={{ type: "spring", stiffness: 120, damping: 20 }}
+  >
+    {uniqueCategoryEvents.map((event) => (
+      <div
+        key={event.id}
+        className="flex-shrink-0 
+                   w-[180px] sm:w-[220px] md:w-[300px] 
+                   h-[240px] sm:h-[300px] md:h-[380px] 
+                   bg-white bg-opacity-90 backdrop-blur 
+                   rounded-xl overflow-hidden mr-4"
+      >
+        <img
+          src={event.image}
+          alt={event.title}
+          className="w-full h-[60%] object-cover"
+        />
+        <div className="p-2 sm:p-3 md:p-4">
+          <h4 className="font-semibold text-xs sm:text-sm md:text-base line-clamp-2">
+            {event.title}
+          </h4>
+          <p className="text-[10px] sm:text-xs md:text-sm text-gray-500 mt-1">
+            {event.date}
+          </p>
         </div>
       </div>
+    ))}
+  </motion.div>
+
+  {/* Dots */}
+  <div className="flex justify-center mt-2 sm:mt-3 space-x-2">
+    {uniqueCategoryEvents.map((_, idx) => (
+      <button
+        key={idx}
+        onClick={() => setCurrentIndex(idx)}
+        className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition ${
+          idx === currentIndex ? "bg-emerald-500 scale-110" : "bg-gray-300"
+        }`}
+      />
+    ))}
+  </div>
+</div>
+
+
+</div>
 
       {/* Top 10 Slider */}
       <div className="px-10 py-12 bg-gradient-to-r from-teal-600 to-emerald-500 text-white relative">
