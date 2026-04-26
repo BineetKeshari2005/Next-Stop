@@ -1,12 +1,12 @@
 // src/TravelContext/TravelContext.jsx
-// Syncs bucket list and visited cities to MongoDB via the Express backend
+// Replace the entire file with this — syncs bucket list and visited to MongoDB
 
 import { createContext, useContext, useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 
 const TravelContext = createContext();
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 export const TravelProvider = ({ children }) => {
   const { token, isLoggedIn } = useAuth();
@@ -29,12 +29,10 @@ export const TravelProvider = ({ children }) => {
     const fetchLists = async () => {
       try {
         const res = await fetch(`${API}/user/lists`, { headers: authHeaders });
-        if (res.ok) {
-          const data = await res.json();
-          setVisitedCities(data.visitedCities || []);
-          setBucketListCities(data.bucketListCities || []);
-          setBucketListEvents(data.bucketListEvents || []);
-        }
+        const data = await res.json();
+        setVisitedCities(data.visitedCities || []);
+        setBucketListCities(data.bucketListCities || []);
+        setBucketListEvents(data.bucketListEvents || []);
       } catch (err) {
         console.error('Failed to load lists:', err);
       } finally {
@@ -45,62 +43,44 @@ export const TravelProvider = ({ children }) => {
   }, [isLoggedIn, token]);
 
   const toggleBucketListCity = async (city) => {
-    if (!isLoggedIn) {
-      alert("Please login to add cities to your bucket list.");
-      return;
-    }
     try {
       const res = await fetch(`${API}/user/bucketlist/city`, {
         method: 'POST',
         headers: authHeaders,
         body: JSON.stringify({ city }),
       });
-      if (res.ok) {
-        const data = await res.json();
-        setBucketListCities(data.bucketListCities || []);
-        setVisitedCities(data.visitedCities || []);
-      }
+      const data = await res.json();
+      setBucketListCities(data.bucketListCities);
+      setVisitedCities(data.visitedCities);
     } catch (err) {
       console.error('Failed to toggle bucket list city:', err);
     }
   };
 
   const toggleVisitedCity = async (city) => {
-    if (!isLoggedIn) {
-      alert("Please login to mark cities as visited.");
-      return;
-    }
     try {
       const res = await fetch(`${API}/user/visited/city`, {
         method: 'POST',
         headers: authHeaders,
         body: JSON.stringify({ city }),
       });
-      if (res.ok) {
-        const data = await res.json();
-        setVisitedCities(data.visitedCities || []);
-        setBucketListCities(data.bucketListCities || []);
-      }
+      const data = await res.json();
+      setVisitedCities(data.visitedCities);
+      setBucketListCities(data.bucketListCities);
     } catch (err) {
       console.error('Failed to toggle visited city:', err);
     }
   };
 
   const toggleBucketListEvent = async (eventId) => {
-    if (!isLoggedIn) {
-      alert("Please login to save events.");
-      return;
-    }
     try {
       const res = await fetch(`${API}/user/bucketlist/event`, {
         method: 'POST',
         headers: authHeaders,
         body: JSON.stringify({ eventId }),
       });
-      if (res.ok) {
-        const data = await res.json();
-        setBucketListEvents(data.bucketListEvents || []);
-      }
+      const data = await res.json();
+      setBucketListEvents(data.bucketListEvents);
     } catch (err) {
       console.error('Failed to toggle bucket list event:', err);
     }

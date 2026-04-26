@@ -11,8 +11,8 @@ const CityCard = ({ place }) => {
     toggleBucketListCity,
   } = useTravelContext();
 
-  const visited = visitedCities.includes(place.city);
-  const inBucketList = bucketListCities.includes(place.city);
+  const visited = visitedCities?.includes(place.city) || false;
+  const inBucketList = bucketListCities?.includes(place.city) || false;
 
   const handleVisitedClick = (e) => {
     e.stopPropagation();

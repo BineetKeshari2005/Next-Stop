@@ -1,43 +1,48 @@
 import React, { useState } from 'react';
-import { auth, db } from '../../../Firebase/Firebase';
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { useAuth } from '../../../context/AuthContext';
 
 const Contact = () => {
+  const { user, token, isLoggedIn } = useAuth();
   const [subject, setSubject] = useState('');
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const user = auth.currentUser;
+  const API = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
 
-  if (!user) {
-    alert("Please login to send a message.");
-    return;
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  setLoading(true);
-  try {
-    const userRef = collection(db, "contactMessages", user.uid, "messages");
+    if (!isLoggedIn) {
+      alert("Please login to send a message.");
+      return;
+    }
 
-    await addDoc(userRef, {
-      subject,
-      query,
-      email: user.email,
-      name: user.displayName || "Anonymous",
-      createdAt: serverTimestamp(),
-    });
+    setLoading(true);
+    try {
+      const res = await fetch(`${API}/messages`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ subject, message: query }),
+      });
 
-    alert("Message sent successfully!");
-    setSubject('');
-    setQuery('');
-  } catch (error) {
-    console.error("Error sending message:", error);
-    alert("Failed to send message.");
-  }
-  setLoading(false);
-};
-
+      if (res.ok) {
+        alert("Message sent successfully and saved to database!");
+        setSubject('');
+        setQuery('');
+      } else {
+        const errorData = await res.json();
+        throw new Error(errorData.message || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert(`Error: ${error.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section id="contact" className="py-20 px-4 md:px-16 bg-gradient-to-b bg-[#fffaf0]">
@@ -52,14 +57,14 @@ const handleSubmit = async (e) => {
             data-aos="fade-up"
             data-aos-duration="800"
           >
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13994.756830232527!2d77.10513338715818!3d28.99924403437983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390da9eec0f0c87b%3A0x6b9db4bb5602f5b9!2sRishihood%20University!5e0!3m2!1sen!2sin!4v1721280607655!5m2!1sen!2sin"
-    className="w-full h-full border-0"
-    allowFullScreen=""
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-    title="Rishihood University Map"
-  ></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13994.756830232527!2d77.10513338715818!3d28.99924403437983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390da9eec0f0c87b%3A0x6b9db4bb5602f5b9!2sRishihood%20University!5e0!3m2!1sen!2sin!4v1721280607655!5m2!1sen!2sin"
+              className="w-full h-full border-0"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Rishihood University Map"
+            ></iframe>
           </div>
 
           <div
@@ -110,5 +115,3 @@ const handleSubmit = async (e) => {
 };
 
 export default Contact;
-
-

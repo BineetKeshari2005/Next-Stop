@@ -1,7 +1,9 @@
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
-import './index.css';
+// src/App.jsx — add AuthProvider wrapping TravelProvider
 
-import { AuthProvider } from './context/AuthContext';
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import '../src/index.css';
+
+import { AuthProvider } from './context/AuthContext';     // NEW
 import { TravelProvider } from './TravelContext/TravelContext';
 
 import Layout from './Layout.jsx';
@@ -35,7 +37,7 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <AuthProvider>
+    <AuthProvider>           {/* NEW — wraps everything */}
       <TravelProvider>
         <RouterProvider router={router} />
       </TravelProvider>
@@ -44,3 +46,6 @@ function App() {
 }
 
 export default App;
+
+// ------- frontend .env (add to your next-stop/.env) -------
+// VITE_API_URL=http://localhost:5000/api

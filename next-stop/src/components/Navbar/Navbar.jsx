@@ -1,25 +1,18 @@
-import { useState, useEffect,useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
-import { auth } from '../../Firebase/Firebase';
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged,
-  updateProfile,
-} from 'firebase/auth';
-import { FaUserAlt, FaLock, FaSearch } from 'react-icons/fa';
+import { useAuth } from '../../context/AuthContext';
+import { FaUserAlt, FaLock } from 'react-icons/fa';
 import { MdMail } from "react-icons/md";
 import { ImCross } from "react-icons/im";
-import { IoMapOutline } from "react-icons/io5";
 import ExploreIndiaMap from './ExploreIndiaMap';
-import { FaUserCircle } from "react-icons/fa"
+import { FaUserCircle } from "react-icons/fa";
 
 export default function Navbar() {
+  const { user, isLoggedIn, login, register, logout } = useAuth();
+  const userName = user?.name || '';
+
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userName, setUserName] = useState('');
   const [showAuthForm, setShowAuthForm] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
@@ -35,61 +28,27 @@ export default function Navbar() {
   document.addEventListener("mousedown", handleClickOutside);
   return () => document.removeEventListener("mousedown", handleClickOutside);
 }, []);
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setIsLoggedIn(true);
-        setUserName(user.displayName || user.email);
-      } else {
-        setIsLoggedIn(false);
-        setUserName('');
-      }
-    });
-    return () => unsubscribe();
-  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-const handleAuthSubmit = async (e) => {
-  e.preventDefault();
-  const { name, email, password } = formData;
 
-  try {
-    if (isSignup) {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-
-      //  Set displayName in Firebase Auth
-      await updateProfile(user, { displayName: name });
-
-      //  Reload user to reflect name update
-      await user.reload();
-
-     
-      setUserName(user.displayName);
-    } else {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-
-      // ✅ Update state with existing display name or fallback to email
-      setUserName(user.displayName || user.email);
+  const handleAuthSubmit = async (e) => {
+    e.preventDefault();
+    const { name, email, password } = formData;
+    try {
+      if (isSignup) {
+        await register(name, email, password);
+      } else {
+        await login(email, password);
+      }
+      setShowAuthForm(false);
+      setFormData({ name: '', email: '', password: '' });
+    } catch (error) {
+      console.error("Auth Error:", error);
+      alert(error.message);
     }
-
-    setIsLoggedIn(true);
-    setShowAuthForm(false);
-    setFormData({ name: '', email: '', password: '' });
-
-    // ✅ Check output in console
-    console.log("Display Name:", auth.currentUser.displayName);
-  } catch (error) {
-    console.error("Auth Error:", error);
-    alert(error.message);
-  }
-};
-
-
-
+  };
 
   return (
     <>
@@ -110,6 +69,7 @@ const handleAuthSubmit = async (e) => {
             <Link to="/explore" className="relative text-[#800000] after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#800000] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#a0522d]">Explore</Link>
             <Link to="/events" className="relative text-[#800000] after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#800000] after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-[#a0522d]">Events</Link>
           </div>
+
 
 <div className="hidden md:flex gap-6">
   {isLoggedIn ? (
@@ -144,7 +104,7 @@ const handleAuthSubmit = async (e) => {
             </Link>
             <button
               onClick={() => {
-                signOut(auth);
+                logout();
                 setShowMenu(false);
               }}
               className="px-4 py-2 text-left hover:bg-gray-100"
@@ -188,7 +148,7 @@ const handleAuthSubmit = async (e) => {
                 
                 <ExploreIndiaMap/>
                 <button
-                  onClick={() => signOut(auth)}
+                  onClick={() => logout()}
                   className="bg-red-500 px-4 py-2 rounded-md text-white font-semibold"
                 >
                   Logout
@@ -268,7 +228,7 @@ const handleAuthSubmit = async (e) => {
               </button>
             </form>
             <div className="pt-2 text-sm text-center">
-              <span className="text-white">{isSignup ? "" : 'Don’t have an account? '}</span>
+              <span className="text-white">{isSignup ? "" : 'Don\'t have an account? '}</span>
               <button
                 onClick={() => setIsSignup(!isSignup)}
                 className="text-yellow-500 hover:underline font-semibold"
@@ -282,5 +242,3 @@ const handleAuthSubmit = async (e) => {
     </>
   );
 }
-
-
